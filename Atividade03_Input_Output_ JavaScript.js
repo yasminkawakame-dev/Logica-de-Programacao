@@ -24,7 +24,7 @@
 // → Seu código aqui:
 
 let lerTeclado = require('readline-sync');
-/*
+
 console.log("Iniciando programa...");
 console.info("Atividade sobre Input e Output em JavaScript");
 console.warn("Sempre antes de inicar o programa o usuário deve executar node <nomeDoArquivo>.js ");
@@ -188,7 +188,7 @@ console.log(pessoa3.endereco);
 console.log(pessoa1.nome, pessoa1.endereco.rua);
 
 console.log("_______________________________");
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Ranking de notas
@@ -203,6 +203,34 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let aluno1 = {
+    nome: lerTeclado.question("Qual seu nome?"),
+    nota1: lerTeclado.questionInt("Primeira nota?"),
+    nota2: lerTeclado.questionInt("Segunda nota?"),
+    nota3: lerTeclado.questionInt("Terceira nota?"),
+}
+
+let aluno2 = {
+    nome: lerTeclado.question("\nQual seu nome?"),
+    nota1: lerTeclado.questionInt("Primeira nota?"),
+    nota2: lerTeclado.questionInt("Segunda nota?"),
+    nota3: lerTeclado.questionInt("Terceira nota?"),
+}
+
+let aluno3 = {
+    nome: lerTeclado.question("\nQual seu nome?"),
+    nota1: lerTeclado.questionInt("Primeira nota?"),
+    nota2: lerTeclado.questionInt("Segunda nota?"),
+    nota3: lerTeclado.questionInt("Terceira nota?"),
+}
+
+let turma = [aluno1, aluno2, aluno3];
+
+console.table(turma);
+
+console.log(turma[1].nome, turma[1].nota1);
+console.log(turma[2].nome, turma[2].nota2);
+console.log(turma[0].nome, turma[0].nota3);
 
 console.log("_______________________________");
 
@@ -224,7 +252,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-let nomeProduto = {
+let produto = {
     nome: lerTeclado.question("Nome do produto?"),
     categoria: lerTeclado.question("Categoria do produto?"),
     preco: lerTeclado.questionFloat("Qual o preco?"),
@@ -232,11 +260,11 @@ let nomeProduto = {
     disponibilidade: lerTeclado.keyInYN("Esta disponivel para venda?")
 }
 
-let disponivel = (`${nomeProduto.disponibilidade ? "Sim" : "Não"}`);
+let disponivel = (`${produto.disponibilidade ? "Sim" : "Não"}`);
 
-console.table(nomeProduto);
+console.table(produto);
 
-console.log(`Produto: ${nomeProduto.nome} | Categoria: ${nomeProduto.categoria} | Estoque: ${nomeProduto.estoque} `);
+console.log(`Produto: ${produto.nome} | Categoria: ${produto.categoria} | Estoque: ${produto.estoque} `);
 
 console.log("_______________________________");
 
@@ -252,3 +280,28 @@ console.log("_______________________________");
 // c) Exiba a lista com console.table().
 // d) Exiba somente o nome e preço do 2 medicamento.
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
+
+let med1 = {
+    nome: lerTeclado.question("\nNome do medicamento: \n"),
+    preco: lerTeclado.questionFloat("\nQual o preço? \n"),
+    emEstoque: lerTeclado.keyInYN("\nTem em estoque? \n")
+}
+
+let med2 = {
+    nome: lerTeclado.question("\nNome do medicamento: \n"),
+    preco: lerTeclado.questionFloat("\nQual o preço? \n"),
+    emEstoque: lerTeclado.keyInYN("\nTem em estoque? \n")
+}
+
+let estoqueFarmacia = [];
+
+estoqueFarmacia.push(med1, med2);
+
+console.table(estoqueFarmacia);
+
+console.log(estoqueFarmacia[1].nome, estoqueFarmacia[1].preco);
+
+console.log(estoqueFarmacia[0].nome, estoqueFarmacia[0].emEstoque);
+
+
+
