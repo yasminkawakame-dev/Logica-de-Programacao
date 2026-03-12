@@ -49,7 +49,7 @@ const letras2 = ['a', 'b', 'c', 'd', 'e', 't'];
 
 let comida = [letras2[1], letras2[0], letras2[5], letras2[0], letras2[5], letras2[0]]
 
-console.log(comida)
+console.log(comida);
 
 console.log("_______________________________");
 
@@ -72,6 +72,10 @@ const pessoa = {
 
 console.log(pessoa.nome, pessoa.endereco.cidade);
 
+pessoa.curso = "Programação";
+
+console.log(pessoa);
+
 
 console.log("_______________________________");
 
@@ -93,6 +97,15 @@ const perfil = {
 // d) Exiba o nome, a idade e a lista de interesse da pessoa.
 
 // → Seu código aqui:
+
+console.log(perfil.dados.nome);
+
+console.log(perfil.dados.interesses[1]);
+
+perfil.interesses
+
+
+
 
 
 console.log("_______________________________");
