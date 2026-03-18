@@ -76,6 +76,10 @@ pessoa.curso = "Programação";
 
 console.log(pessoa);
 
+pessoa.curso = "Programação";
+
+console.log(pessoa);
+
 
 console.log("_______________________________");
 
@@ -102,10 +106,11 @@ console.log(perfil.dados.nome);
 
 console.log(perfil.dados.interesses[1]);
 
-perfil.interesses
+perfil.dados.interesses[0] = "arte";
 
+console.log(perfil.dados);
 
-
+console.log(perfil.dados.nome[1]);
 
 
 console.log("_______________________________");
@@ -121,6 +126,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let produtos = []
 
 console.log("_______________________________");
 
