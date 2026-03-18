@@ -211,11 +211,11 @@ let esteItemEhCaro = preco > precoMaximo;
 console.log(`
 ______________________________________________________________________
 Preco informado: R$ ${preco}
-Dentro do orcamento: (≤ R$ ${precoMaximo})? : ${estaDentroDoOrcamento}
-Item caro (> R$ ${precoMaximo})? : ${esteItemEhCaro}
+Dentro do orcamento: (≤ R$ ${precoMaximo})? ${estaDentroDoOrcamento ? "Sim" : "Não"}
+Item caro (> R$ ${precoMaximo})? ${esteItemEhCaro ? "Sim" : "Não"}
 _______________________________________________________________________
 `);
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – Comparando notas
@@ -232,34 +232,34 @@ _______________________________________________________________________
 
 // → Seu código aqui:
 
-let cadastro = {
-    pessoa1: {
+let cadastro = [
+    {
         nome: lerTeclado.question("Nome da primeira pessoa:"),
         idade: lerTeclado.questionInt("Idade da primeira pessoa:"),
     },
-    pessoa2: {
+    {
         nome: lerTeclado.question("Nome da segunda pessoa:"),
         idade: lerTeclado.questionInt("Idade da segunda pessoa:"),
     }
-};
+];
 
-let comparacao1 = cadastro.pessoa1.idade > cadastro.pessoa2.idade;
-let comparacao2 = cadastro.pessoa1.idade === cadastro.pessoa2.idade;
-let comparacao3 = cadastro.pessoa1.idade >= 18;
-let comparacao4 = cadastro.pessoa2.idade >= 18;
+let comparacao1 = cadastro[0].idade > cadastro[1].idade;
+let comparacao2 = cadastro[0].idade === cadastro[1].idade;
+let comparacao3 = cadastro[0].idade >= 18;
+let comparacao4 = cadastro[1].idade >= 18;
 
-console.log(`Idade da ${cadastro.pessoa1.nome} é ${cadastro.pessoa1.idade} e é > que 18 "maior de idade"? ${comparacao3}`);
-console.log(`Idade da ${cadastro.pessoa2.nome} é ${cadastro.pessoa2.idade} e é > que 18 "maior de idade"? ${comparacao4}`);
-console.log(`A idade de ${cadastro.pessoa1.nome} é maior que a idade de ${cadastro.pessoa2.nome}? ${comparacao1}`);
-console.log(`A idade de ${cadastro.pessoa1.nome} é igual a idade de ${cadastro.pessoa2.nome}? ${comparacao2}`);
+console.log(`Idade da ${cadastro[0].nome} é ${cadastro[0].idade} e é > que 18 "maior de idade"? ${comparacao3}`);
+console.log(`Idade da ${cadastro[1].nome} é ${cadastro[1].idade} e é > que 18 "maior de idade"? ${comparacao4}`);
+console.log(`A idade de ${cadastro[0].nome} é maior que a idade de ${cadastro[1].nome}? ${comparacao1}`);
+console.log(`A idade de ${cadastro[0].nome} é igual a idade de ${cadastro[1].nome}? ${comparacao2}`);
 
 
-console.log(`A pessoa mais velha é: `); // voltar nessa questão para resolver a letra d
+console.log(`A pessoa mais velha é: ${cadastro[0].idade > cadastro[1].idade ? cadastro[0].nome : cadastro[1].nome}`);
 
 
 console.log("_______________________________");
 
-
+*/
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Comparando notas (versão avançada)
 // ------------------------------------------------------------
@@ -271,14 +271,14 @@ console.log("_______________________________");
 // → Seu código aqui:
 
 let alunos =[{
-    nomeAluno1: lerTeclado.question("Nome aluno:\n"),
-    notas: [lerTeclado.questionInt("Qual a primeira nota?"),
-            lerTeclado.questionInt("Qual a segunda nota?"),
-            lerTeclado.questionInt("Qual a terceira nota?"),
+    nomeAluno: lerTeclado.question("Nome aluno:\n"),
+    notas: [lerTeclado.questionInt("Qual a primeira nota?\n"),
+            lerTeclado.questionInt("Qual a segunda nota?\n"),
+            lerTeclado.questionInt("Qual a terceira nota?\n"),
         ]
     },
         {
-        nomeAluno2: lerTeclado.question("Nome aluno:\n"),
+        nomeAluno: lerTeclado.question("Nome aluno:\n"),
         notas: [lerTeclado.questionInt("Qual a primeira nota?\n"),
                 lerTeclado.questionInt("Qual a segunda nota?\n"),
                 lerTeclado.questionInt("Qual a terceira nota?\n"),
@@ -286,5 +286,17 @@ let alunos =[{
         }
     ];
 
+
+let mediaAluno1 = (alunos[0].notas[0] + alunos[0].notas[1] + alunos[0].notas[2]) / alunos[0].notas.length;
+console.log(mediaAluno1.toFixed(2));
+
+let mediaAluno2 = (alunos[1].notas[0] + alunos[1].notas[1] + alunos[1].notas[2]) / alunos[1].notas.length;
+console.log(mediaAluno2.toFixed(2));
+
+console.log(`O aluno com a maior média de notas foi: ${mediaAluno1 > mediaAluno2 ? alunos[0].nomeAluno : alunos[1].nomeAluno}`);
+
+console.log(`Aluno com primeira maior nota: ${ alunos[0].notas[0] > alunos[1].notas[0] ? alunos[0].nomeAluno : alunos[1].nomeAluno}`);
+console.log(`Aluno com segunda maior nota: ${ alunos[0].notas[1] > alunos[1].notas[1] ? alunos[0].nomeAluno : alunos[1].nomeAluno}`);
+console.log(`Aluno com terceira maior nota: ${ alunos[0].notas[2] > alunos[1].notas[2] ? alunos[0].nomeAluno : alunos[1].nomeAluno}`);
 
 console.log("_______________________________");
