@@ -76,11 +76,6 @@ pessoa.curso = "Programação";
 
 console.log(pessoa);
 
-pessoa.curso = "Programação";
-
-console.log(pessoa);
-
-
 console.log("_______________________________");
 
 
@@ -108,10 +103,7 @@ console.log(perfil.dados.interesses[1]);
 
 perfil.dados.interesses[0] = "arte";
 
-console.log(perfil.dados);
-
-console.log(perfil.dados.nome[1]);
-
+console.log(perfil.dados.nome, perfil.dados.idade, perfil.dados.interesses);
 
 console.log("_______________________________");
 
@@ -126,7 +118,27 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-let produtos = []
+let produtos = [{
+  id: 1,
+  nomeDoProduto: "Teclado",
+  preco: 200,
+},
+{
+  id: 2,
+  nomeDoProduto: "Mouse",
+  preco: 100,
+},
+{
+  id: 3,
+  nomeDoProduto: "Fone de ouvido",
+  preco: 150,
+}];
+
+let catalogo = {
+  1: "Teclado",
+  2: "Mouse",
+  3: "Fone de ouvido"
+};
 
 console.log("_______________________________");
 
@@ -142,5 +154,30 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let tarefas = [
+  {
+    id: 1,
+    titulo: "Historia",
+    concluida: false,
+  },
+  {
+    id: 2,
+    titulo: "Matematica",
+    concluida: false,
+  },
+  {
+    id: 3,
+    titulo: "Portugues",
+    concluida: false,
+  }
+];
+
+tarefas[1].concluida = true;
+
+let naoConcluida = [tarefas[0], tarefas[2]];
+
+console.log(tarefas[0].titulo, tarefas[1].titulo, tarefas[2].titulo);
+
+console.log(naoConcluida[0].titulo, naoConcluida[1].titulo);
 
 console.log("_______________________________");

@@ -96,14 +96,24 @@ _______________________________________________________`);
 
 // → Seu código aqui:
 
-let despesas = {
-    aluguel:  lerTeclado.question("Qual o valor da despesa de aluguel? \n"),
-    internet:  lerTeclado.question("Qual o valor da despesa de internet? \n"),
-    energia:  lerTeclado.question("Qual o valor da despesa de energia? \n"),
-    alimentacao:  lerTeclado.question("Qual o valor da despesa de alimentacao? \n"),
-}
+// let despesas = {
+//     aluguel:  lerTeclado.questionFloat("Qual o valor da despesa de aluguel? \n"),
+//     internet:  lerTeclado.questionFloat("Qual o valor da despesa de internet? \n"),
+//     energia:  lerTeclado.questionFloat("Qual o valor da despesa de energia? \n"),
+//     alimentacao:  lerTeclado.questionFloat("Qual o valor da despesa de alimentacao? \n"),
+// }
 
-let listaDespesas = [despesas];
+// let listaDespesas = [despesas.aluguel, despesas.internet,  despesas.energia, despesas.alimentacao];
+// let totalDespesas = despesas.aluguel + despesas.internet + despesas.energia + despesas.alimentacao;
+// let mediaDespesas = totalDespesas / listaDespesas.length;
+
+// let sobra = 5000 - totalDespesas;
+
+// console.log(`
+// Total de despesas: ${totalDespesas}
+// Média de despesas: ${mediaDespesas}
+// Dinheiro restante: ${sobra}`);
+
 
 console.log("_______________________________");
 
@@ -134,6 +144,24 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let jogador = {
+//     nomeJogador: lerTeclado.question("Qual o nome do jogador? \n"),
+//     partidasJogadas: lerTeclado.questionInt("Quantas partidas jogadas? \n"),
+//     gols: lerTeclado.questionInt("Quantos gols? \n"),
+//     assistencias: lerTeclado.questionInt("Quantas assistencias? \n"),
+// };
+
+// let estatisticas = [jogador.gols, jogador.assistencias]
+
+// let participacoesEmGol = estatisticas[0] + estatisticas[1];
+
+// let mediaPorPartida = participacoesEmGol / jogador.partidasJogadas;
+
+// console.log(
+// `Jogador: ${jogador.nomeJogador}
+// Participações em gol: ${participacoesEmGol}
+// Média por partida: ${mediaPorPartida}`
+// );
 
 console.log("_______________________________");
 
@@ -161,10 +189,39 @@ console.log("_______________________________");
 // "Desconto: X"
 // "Valor final: X"
 
-// → Seu código aqui:
+// // → Seu código aqui:
 
+// let produto1 = {
+//     nome: lerTeclado.question("Nome produto? \n"),
+//     preco: lerTeclado.questionFloat("Qual o preço? \n")
+// };
+// let produto2 = {
+//     nome: lerTeclado.question("Nome produto? \n"),
+//     preco: lerTeclado.questionFloat("Qual o preço? \n")
+// }; 
+// let produto3 = {
+//     nome: lerTeclado.question("Nome produto? \n"),
+//     preco: lerTeclado.questionFloat("Qual o preço? \n")
+// };
+// let produto4 = {
+//     nome: lerTeclado.question("Nome produto? \n"),
+//     preco: lerTeclado.questionFloat("Qual o preço? \n")
+// };
 
-console.log("_______________________________");
+// let mercado = {produto1, produto2, produto3, produto4};
+
+// let valorTotalCompra = produto1.preco + produto2.preco + produto3.preco + produto4.preco;
+
+// let desconto = valorTotalCompra * 0.10;
+
+// let valorFinal = valorTotalCompra - desconto;
+
+// console.log(
+// `Total da compra: ${valorTotalCompra}
+// Desconto: ${desconto}
+// Valor final: ${valorFinal}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -192,8 +249,23 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let boletim = [
+//     nota1 = lerTeclado.questionFloat("Primeira nota: \n"),
+//     nota2 = lerTeclado.questionFloat("Segunda nota: \n"),
+//     nota3 = lerTeclado.questionFloat("Terceira nota: \n"),
+//     nota4 = lerTeclado.questionFloat("Quarta nota: \n"),
+// ];
 
-console.log("_______________________________");
+// let mediaNotas = ((boletim[0] + boletim[1] + boletim[2] + boletim[3]) / boletim.length);
+
+// let pontosFaltantes = 10 - mediaNotas;
+
+// console.log(`
+// Notas: ${boletim}
+// Media: ${mediaNotas}
+// Faltam quantos pontos para media 10: ${pontosFaltantes}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -224,8 +296,26 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let entrada = lerTeclado.questionFloat("Valor Entrada: R$");
+// let pratoPrincipal = lerTeclado.questionFloat("Valor Prato Principal: R$");
+// let sobremesa = lerTeclado.questionFloat("Valor Sobremesa: R$");
+// let bebida = lerTeclado.questionFloat("Valor Bebida: R$");
 
-console.log("_______________________________");
+// let pedido = {entrada, pratoPrincipal, sobremesa, bebida};
+// let itens = [entrada, pratoPrincipal, sobremesa, bebida];
+
+// let subtotal = entrada + pratoPrincipal + sobremesa + bebida;
+
+// let taxaServico = subtotal * 0.10;
+
+// let valorTotalPedido = subtotal + taxaServico;
+
+// console.log(`
+// Subtotal: ${subtotal}
+// Taxa de serviço: ${taxaServico}
+// Total a pagar: ${valorTotalPedido}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -250,8 +340,26 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let analise = {
+//     numero1: lerTeclado.questionInt("Digite o primeiro numero:"),
+//     numero2: lerTeclado.questionInt("Digite o segundo numero:"),
+//     numero3: lerTeclado.questionInt("Digite o terceiro numero:"),
+//     numero4: lerTeclado.questionInt("Digite o quarto numero:"),
+//     numero5: lerTeclado.questionInt("Digite o quinto numero:"),
+// };
 
-console.log("_______________________________");
+// let numeros = [analise.numero1, analise.numero2, analise.numero3, analise.numero4, analise.numero5];
+
+// let somaTodos = (analise.numero1 + analise.numero2 + analise.numero3 + analise.numero4 + analise.numero5);
+// let mediaTodos = somaTodos / numeros.length;
+// let produtos = (analise.numero1 * analise.numero2 * analise.numero3 * analise.numero4 * analise.numero5);
+
+// console.log(`
+// Soma: ${somaTodos}
+// Media: ${mediaTodos}
+// Produto: ${produtos}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -285,10 +393,28 @@ console.log("_______________________________");
 // "Gastos totais: X"
 // "Saldo final: X"
 
-// → Seu código aqui:
+// // → Seu código aqui:
 
+// let salario = lerTeclado.questionFloat("Valor salario: R$");
+// let rendaExtra = lerTeclado.questionFloat("Valor renda extra: R$");
+// let gastosFixos = lerTeclado.questionFloat("Valor gasto fixos: R$");
+// let gastosVariaveis = lerTeclado.questionFloat("Valor gastos variaveis: R$");
 
-console.log("_______________________________");
+// let financeiro = {salario, rendaExtra, gastosFixos, gastosVariaveis};
+
+// let receitas = [salario, rendaExtra];
+// let despesas = [gastosFixos, gastosVariaveis];
+
+// let rendaTotal = salario + rendaExtra;
+// let gastoTotal = gastosFixos + gastosVariaveis;
+// let saldoFinal = rendaTotal - gastoTotal;
+
+// console.log(`
+// Renda total: ${rendaTotal}
+// Gastos totais: ${gastoTotal}
+// Saldo final: ${saldoFinal}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -308,6 +434,38 @@ console.log("_______________________________");
 //    Use toFixed(2) em todos os valores.
 
 // → Seu código aqui:
+
+let prod1 = {
+    nome: lerTeclado.question("Nome do produto:"),
+    quantidade: lerTeclado.questionInt("Quantidade:"),
+    preco: lerTeclado.questionFloat("Preco do produto: R$"),
+};
+let prod2 = {
+    nome: lerTeclado.question("Nome do produto:"),
+    quantidade: lerTeclado.questionInt("Quantidade:"),
+    preco: lerTeclado.questionFloat("Preco do produto: R$"),
+};
+let prod3 = {
+    nome: lerTeclado.question("Nome do produto:"),
+    quantidade: lerTeclado.questionInt("Quantidade:"),
+    preco: lerTeclado.questionFloat("Preco do produto: R$"),
+};
+
+let carrinho = [prod1, prod2, prod3];
+
+let totalCarrinho = prod1.preco + prod2.preco + prod3.preco;
+
+let percentual = lerTeclado.questionInt("Qual o percentual de desconto?") / 100;
+
+let totalDescoto = totalCarrinho - percentual;
+
+console.table(carrinho);
+
+console.log(`
+Total sem desconto: R$ ${totalCarrinho}
+Desconto:  R$ ${percentual}
+Total com desconto: R$ ${totalDescoto}
+`);
 
 
 console.log("_______________________________");
