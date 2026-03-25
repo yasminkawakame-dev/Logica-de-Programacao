@@ -4,6 +4,7 @@
 // Instruções: resolva cada desafio no espaço indicado.
 // ============================================================
 
+let lerTeclado = require('readline-sync');
 
 // ------------------------------------------------------------
 // DESAFIO 1 – Classificador de IMC
@@ -25,8 +26,36 @@
 
 // → Seu código aqui:
 
+// let pessoa = {
+//     nome: lerTeclado.question("Qual o seu nome? \n"),
+//     peso: lerTeclado.questionFloat("Qual o seu peso em kg? \n"),
+//     altura: lerTeclado.question("Qual a sua altura em m? \n"),
+// };
 
-console.log("_______________________________");
+// pessoa.IMC = (pessoa.peso / (pessoa.altura ** 2)).toFixed(1);
+
+// let classificacao ;
+
+// if (pessoa.IMC < 18.5){
+//     classificacao = "Abaixo do peso";
+// } else if (pessoa.IMC >= 18.5 && pessoa.IMC < 25){
+//     classificacao = "Peso normal";
+// } else if (pessoa.IMC >= 25 && pessoa.IMC < 30){
+//     classificacao = "Sobrepeso";
+// } else if (pessoa.IMC >= 30 && pessoa.IMC < 35){
+//     classificacao = "Obesidade grau I"
+// } else if (pessoa.IMC >= 35 && pessoa.IMC < 40){
+//     classificacao = "Obesidade grau II"
+// } else {
+//     classificacao = "Obesidade grau III";
+// };
+
+// console.table(pessoa);
+
+// console.log(`${pessoa.nome}, seu IMC é ${pessoa.IMC} - ${classificacao}`);
+
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -59,6 +88,22 @@ console.log("_______________________________");
 // Verifique se é possível fazer verificações uma única vez, alterando a lógica ao invés de duplicar código.
 
 // → Seu código aqui:
+
+// let conta = {
+//     titular: "Maria",
+//     saldo: 1500,
+//     bloqueada: false,
+//     senha: 1234,
+// };
+
+// let senhaUsuario = lerTeclado.questionInt("Digite a senha...");
+
+// if (senhaUsuario != conta.senha){
+//     console.log("Senha incorreta. Operação cancelada.");
+// } else {
+//     console.log(lerTeclado.question("Deseja sacar ou depositar um valor? \n"));    
+// } 
+
 
 
 console.log("_______________________________");
