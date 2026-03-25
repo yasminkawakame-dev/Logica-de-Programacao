@@ -219,7 +219,7 @@ let lerTeclado = require('readline-sync');
 //     idoso: lerTeclado.keyInYN("É idoso, com 60 anos o mais? \n")
 // };
 
-// if (requisitos.estudante && requisitos.idoso){
+// if (requisitos.estudante || requisitos.idoso){
 //     console.log("Desconto de 50% aplicado!");
 // } else {
 //     console.log("Sem desconto. Preço cheio.");
@@ -312,12 +312,17 @@ let lerTeclado = require('readline-sync');
 // } else if (calculo.operacao == 3){
 //     calculo.simbolo = "*";
 //     resultado = calculo.num1 * calculo.num2;
-// } else if (calculo.operacao == 4){
+// } else if (calculo.operacao == 4 && calculo.num2 == 0){
+//     console.log("ERRO");
+// } else {
 //     calculo.simbolo = "/";
 //     resultado = calculo.num1 / calculo.num2;
 // }
 
-// console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
+
+// if(resultado)
+//     console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
+    
 
 // console.log("_______________________________");
 
