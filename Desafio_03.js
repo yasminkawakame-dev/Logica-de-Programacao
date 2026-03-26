@@ -435,40 +435,39 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-let prod1 = {
-    nome: lerTeclado.question("Nome do produto:"),
-    quantidade: lerTeclado.questionInt("Quantidade:"),
-    preco: lerTeclado.questionFloat("Preco do produto: R$"),
-};
-let prod2 = {
-    nome: lerTeclado.question("Nome do produto:"),
-    quantidade: lerTeclado.questionInt("Quantidade:"),
-    preco: lerTeclado.questionFloat("Preco do produto: R$"),
-};
-let prod3 = {
-    nome: lerTeclado.question("Nome do produto:"),
-    quantidade: lerTeclado.questionInt("Quantidade:"),
-    preco: lerTeclado.questionFloat("Preco do produto: R$"),
-};
+// let prod1 = {
+//     nome: lerTeclado.question("Nome do produto:"),
+//     quantidade: lerTeclado.questionInt("Quantidade:"),
+//     preco: lerTeclado.questionFloat("Preco do produto: R$"),
+// };
+// let prod2 = {
+//     nome: lerTeclado.question("Nome do produto:"),
+//     quantidade: lerTeclado.questionInt("Quantidade:"),
+//     preco: lerTeclado.questionFloat("Preco do produto: R$"),
+// };
+// let prod3 = {
+//     nome: lerTeclado.question("Nome do produto:"),
+//     quantidade: lerTeclado.questionInt("Quantidade:"),
+//     preco: lerTeclado.questionFloat("Preco do produto: R$"),
+// };
 
-let carrinho = [prod1, prod2, prod3];
+// let carrinho = [prod1, prod2, prod3];
 
-let totalCarrinho = prod1.preco + prod2.preco + prod3.preco;
+// let totalCarrinho = prod1.preco + prod2.preco + prod3.preco;
 
-let percentual = lerTeclado.questionInt("Qual o percentual de desconto?") / 100;
+// let percentual = lerTeclado.questionInt("Qual o percentual de desconto?") / 100;
 
-let totalDescoto = totalCarrinho - percentual;
+// let totalDescoto = totalCarrinho - percentual;
 
-console.table(carrinho);
+// console.table(carrinho);
 
-console.log(`
-Total sem desconto: R$ ${totalCarrinho}
-Desconto:  R$ ${percentual}
-Total com desconto: R$ ${totalDescoto}
-`);
+// console.log(`
+// Total sem desconto: R$ ${totalCarrinho}
+// Desconto:  R$ ${percentual}
+// Total com desconto: R$ ${totalDescoto}
+// `);
 
-
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -485,8 +484,19 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let resultado = {
+//     nome: lerTeclado.question("Qual o seu nome? \n"),
+//     peso: lerTeclado.questionFloat("Qual o seu peso em kg? \n"),
+//     altura: lerTeclado.question("Qual a sua altura em m? \n"),
+// };
 
-console.log("_______________________________");
+// resultado.imc = (resultado.peso / (resultado.altura ** 2)).toFixed(2);
+
+// console.table(resultado);
+
+// console.log(`Olá, ${resultado.nome}! Seu IMC é: ${resultado.imc}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -509,8 +519,24 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let viagem = {
+//     distancia: lerTeclado.questionFloat("Qual a distância total da viagem em km? \n"),
+//     consumo: lerTeclado.questionInt("Consumo médio do carro por litro? \n"),
+//     precoCombustivel: lerTeclado.questionFloat("Qual o preço do combustível por litro? \n"),
+//     numPessoas: lerTeclado.questionInt("Quantas pessoas vão dividir o custo? \n"),
+// };
 
-console.log("_______________________________");
+// let litros = (viagem.distancia / viagem.consumo).toFixed(2);
+// let custoTotal = (litros * viagem.precoCombustivel).toFixed(2);
+// let custoPorPessoa = (custoTotal / viagem.numPessoas).toFixed(2);
+
+// console.log(`
+// Distância: ${viagem.distancia} km
+// Litros necessários: ${litros} L
+// Custo total: R$ ${custoTotal}
+// Custo por pessoa: R$ ${custoPorPessoa}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -530,6 +556,24 @@ console.log("_______________________________");
 // e) Exiba no console uma mensagem com template literal resumindo o contracheque.
 
 // → Seu código aqui:
+
+let contraCheque = {
+    nomeFuncionario: lerTeclado.question("Nome do funcionario: \n"),
+    salarioBruto: lerTeclado.questionFloat("Salario Bruto: \n"),
+    INSS: lerTeclado.questionFloat("Percentual de desconto do INSS: \n"),
+    IR: lerTeclado.questionFloat("Percentual de desconto do IR: \n"),
+};
+
+contraCheque.descontoINSS = (contraCheque.salarioBruto * (contraCheque.INSS / 100)).toFixed(3);
+contraCheque.descontoIR = (contraCheque.salarioBruto * (contraCheque.IR / 100)).toFixed(3);
+contraCheque.salarioLiquido = (contraCheque.salarioBruto - contraCheque.descontoINSS - contraCheque.descontoIR).toFixed(3);
+
+console.table(contraCheque)
+
+console.log(`
+${contraCheque.nomeFuncionario}, seu salario bruto é R$ ${contraCheque.salarioBruto.toFixed(3)}
+e com os descontos de INSS: ${contraCheque.INSS} % e IR: ${contraCheque.IR} %
+seu salario liquido é R$ ${contraCheque.salarioLiquido}`);
 
 
 console.log("_______________________________");

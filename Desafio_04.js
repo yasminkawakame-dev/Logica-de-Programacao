@@ -11,6 +11,7 @@
 //       não serão solicitados novamente.
 // ============================================================
 
+    let lerTeclado = require('readline-sync');
 
 // ------------------------------------------------------------
 // DESAFIO 1 – Comparador de idades
@@ -27,8 +28,47 @@
 
 // → Seu código aqui:
 
+// let pessoa1 = {
+//     nome: lerTeclado.question("Seu nome: \n"),
+//     idade: lerTeclado.questionInt("Sua idade: \n"),
+// };
 
-console.log("_______________________________");
+// let pessoa2 = {
+//     nome: lerTeclado.question("Seu nome: \n"),
+//     idade: lerTeclado.questionInt("Sua idade: \n"),
+// };
+
+// let pessoa3 = {
+//     nome: lerTeclado.question("Seu nome: \n"),
+//     idade: lerTeclado.questionInt("Sua idade: \n"),
+// };
+
+// let pessoas = [pessoa1, pessoa2, pessoa3];
+
+// console.table(pessoas);
+
+// let maisVelha = pessoa1.idade > pessoa2.idade;
+// let maisNova = pessoa2.idade < pessoa3.idade;
+// let mesmaIdade = pessoa1.idade == pessoa3.idade;
+
+// let maiorDeIdade = {
+//     comparacao1: pessoa1.idade >= 18,
+//     comparacao2: pessoa2.idade >= 18,
+//     comparacao3: pessoa3.idade >= 18,
+// };
+
+// console.log(`
+// ${pessoa1.nome}, tem ${pessoa1.idade} anos.
+// ${pessoa2.nome}, tem ${pessoa2.idade} anos.
+// ${pessoa3.nome}, tem ${pessoa3.idade} anos.
+// ${pessoa1.nome} é mais velho(a) que ${pessoa2.nome}? ${maisVelha ? "Sim" : "Não"}
+// ${pessoa2.nome} é mais novo(a) que ${pessoa3.nome}? ${maisNova ? "Sim" : "Não"}
+// ${pessoa1.nome} tem a mesma idade de ${pessoa3.nome}? ${mesmaIdade ? "Sim" : "Não"}
+// ${pessoa1.nome} é maior de idade? ${maiorDeIdade.comparacao1 ? "Sim" : "Não"}
+// ${pessoa2.nome} é maior de idade? ${maiorDeIdade.comparacao2 ? "Sim" : "Não"}
+// ${pessoa3.nome} é maior de idade? ${maiorDeIdade.comparacao3 ? "Sim" : "Não"}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -46,8 +86,36 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let produto1 = {
+//     nome: lerTeclado.question("Qual o nome do produto? \n"),
+//     preco: lerTeclado.questionFloat("Qual o preco? \n"),
+// };
+// let produto2 = {
+//     nome: lerTeclado.question("Qual o nome do produto? \n"),
+//     preco: lerTeclado.questionFloat("Qual o preco? \n"),
+// };
 
-console.log("_______________________________");
+// let produtos = [produto1, produto2]
+
+// console.table(produtos);
+
+// let comparacoes = {
+//     maisCaro: produto1.preco > produto2.preco,
+//     mesmoPreco: produto1.preco == produto2.preco,
+//     maisBarato: (produto1 || produto2 < 50),
+//     maior200: (produto1 || produto2 > 200),
+// };
+
+// console.log(`
+// ${produto1.nome} custa R$ ${produto1.preco}.
+// ${produto2.nome} custa R$ ${produto2.preco}.
+// ${produto1.nome} é mais caro que ${produto2.nome}? ${comparacoes.maisCaro ? "Sim" : "Não"}
+// Os dois têm o mesmo preço? ${comparacoes.mesmoPreco ? "Sim" : "Não"}
+// O produto mais barato custa menos de R$ 50? ${comparacoes.maisBarato ? "Sim" : "Não"}
+// O produto mais caro custa mais de R$ 200? ${comparacoes.maior200 ? "Sim" : "Não"}`);
+
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -66,6 +134,25 @@ console.log("_______________________________");
 //      (use Math.max() e Math.min() para encontrar maior e menor)
 
 // → Seu código aqui:
+
+let aluno = {
+    nome: lerTeclado.question("Qual seu nome?"),
+    nota1: lerTeclado.questionInt("Primeira nota?"),
+    nota2: lerTeclado.questionInt("Segunda nota?"),
+    nota3: lerTeclado.questionInt("Terceira nota?"),
+    nota4: lerTeclado.questionInt("Quarta nota?"),
+};
+
+let mediaNotas = (aluno.nota1 + aluno.nota2 + aluno.nota3 + aluno.nota4) / 4;
+let boletim = [aluno.nome, [aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4], mediaNotas];
+console.table(boletim);
+
+let aprovado = mediaNotas >= 6;
+let recuracao = mediaNotas >= 4 && mediaNotas < 6;
+let maiorQue9 = (aluno.nota1 || aluno.nota2 || aluno.nota3 || aluno.nota4 > 9);
+let maxima = (Math.max(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
+let minima = (Math.min(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
+
 
 
 console.log("_______________________________");

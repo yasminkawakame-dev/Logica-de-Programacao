@@ -89,20 +89,20 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-// let conta = {
-//     titular: "Maria",
-//     saldo: 1500,
-//     bloqueada: false,
-//     senha: 1234,
-// };
+let conta = {
+    titular: "Maria",
+    saldo: 1500,
+    bloqueada: false,
+    senha: 1234,
+};
 
-// let senhaUsuario = lerTeclado.questionInt("Digite a senha...");
+let senhaUsuario = lerTeclado.questionInt("Digite a senha...");
 
-// if (senhaUsuario != conta.senha){
-//     console.log("Senha incorreta. Operação cancelada.");
-// } else {
-//     console.log(lerTeclado.question("Deseja sacar ou depositar um valor? \n"));    
-// } 
+if (senhaUsuario != conta.senha){
+    console.log("Senha incorreta. Operação cancelada.");
+} else {
+    console.log(lerTeclado.question("Deseja sacar ou depositar um valor? \n"));    
+} 
 
 
 
