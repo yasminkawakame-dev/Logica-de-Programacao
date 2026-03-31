@@ -21,32 +21,32 @@ let lerTeclado = require('readline-sync');
 let planeta = 3;
 
 switch (planeta) {
-    case 1: 
-    console.log("Mercúrio");
+    case 1:
+        console.log("Mercúrio");
         break;
-    case 2: 
-    console.log("Vênus");
+    case 2:
+        console.log("Vênus");
         break;
-    case 3: 
-    console.log("Terra");
+    case 3:
+        console.log("Terra");
         break;
-    case 4: 
-    console.log("Marte");
+    case 4:
+        console.log("Marte");
         break;
-    case 5: 
-    console.log("Júpiter");
+    case 5:
+        console.log("Júpiter");
         break;
-    case 6: 
-    console.log("Saturno");
+    case 6:
+        console.log("Saturno");
         break;
-    case 7: 
-    console.log("Urano");
+    case 7:
+        console.log("Urano");
         break;
-    case 8: 
-    console.log("Netuno");
+    case 8:
+        console.log("Netuno");
         break;
     default:
-    console.log("Planeta não encontrado.");
+        console.log("Planeta não encontrado.");
 };
 
 console.log("_______________________________");
@@ -67,7 +67,7 @@ console.log("_______________________________");
 
 let direcao = "norte";
 
-switch (direcao){
+switch (direcao) {
     case "norte":
         console.log("Seguindo para o Norte ↑");
         break;
@@ -101,9 +101,9 @@ console.log("_______________________________");
 
 
 let tipoVeiculo = "moto";
-let classificacao ;
+let classificacao;
 
-switch (tipoVeiculo){
+switch (tipoVeiculo) {
     case "bicicleta":
     case "moto":
     case "carro":
@@ -113,7 +113,7 @@ switch (tipoVeiculo){
     case "onibus":
         classificacao = ("Veículo pesado");
         break;
-    default: 
+    default:
         classificacao = ("Tipo desconhecido");
 };
 
@@ -246,36 +246,38 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// let produto = {
-//     nome: lerTeclado.question("Nome do produto:\n"),
-//     categoria: lerTeclado.questionInt("Escolha uma opcao: 1: Eletronico | 2: Vestuario | 3: Alimento | 4: Livro:\n"),
-//     preco: lerTeclado.questionFloat("Qual o preco?\n")
-// };
+let produto = {
+    nome: lerTeclado.question("Nome do produto:\n"),
+    categoria: lerTeclado.questionInt("Escolha uma opcao: 1: Eletronico | 2: Vestuario | 3: Alimento | 4: Livro:\n"),
+    preco: lerTeclado.questionFloat("Qual o preco?\n")
+};
 
-// switch (produto.categoria){
-//     case 1:
-//         produto.descricaoCategoria = "Eletronico";
-//         produto.garantia = "Garantia: 12 meses"
-//         break;
-//     case 2:
-//         produto.descricaoCategoria = "Vestuário";
-//         produto.garantia = "Troca em 30 dias"
-//         break;
-//     case 3:
-//         produto.descricaoCategoria = "Alimento";
-//         produto.garantia = "Ver validade"
-//         break;
-//     case 4:
-//         produto.descricaoCategoria = "Livro";
-//         produto.garantia = "Sem garantia"
-//         break;
-//     default:
-//         produto.garantia = "Sem garantia"
-//         produto.categoria = "Categoria inválida.";
-//         produto.descricaoCategoria = "Categoria invalida"
-// };
+switch (produto.categoria){
+    case 1:
+        produto.descricaoCategoria = "Eletronico";
+        produto.garantia = "Garantia: 12 meses"
+        break;
+    case 2:
+        produto.descricaoCategoria = "Vestuário";
+        produto.garantia = "Troca em 30 dias"
+        break;
+    case 3:
+        produto.descricaoCategoria = "Alimento";
+        produto.garantia = "Ver validade"
+        break;
+    case 4:
+        produto.descricaoCategoria = "Livro";
+        produto.garantia = "Sem garantia"
+        break;
+    default:
+        produto.garantia = "Sem garantia";
+        produto.descricaoCategoria = "Categoria invalida";
+        console.log("Categoria inválida.");
+        
 
-// console.table(produto);
+};
+
+console.table(produto);
 
 
 console.log("_______________________________");
@@ -315,7 +317,7 @@ console.log("_______________________________");
 //     case 8:
 //     case 7:
 //         conceito = "B";
-//         mensagem =  "Muito bom.";
+//         mensagem =  "Muito bom!";
 //         break;
 //     case 6:
 //     case 5:
@@ -363,31 +365,42 @@ let calculo = {
     num1:  lerTeclado.questionFloat("Digite um numero:\n"),
     num2: lerTeclado.questionFloat("Digite outro numero:\n"),
     operacao: lerTeclado.questionInt(`Escolha uma operação digitando um número:
-    1: Soma | 2: Subtraçao | 3: Multiplicaçao | 4: Divisao: \n`),
+    1: Soma | 2: Subtraçao | 3: Multiplicaçao | 4: Divisao: | 5: Resto \n`),
     simbolo: "",
 };
+
+let resultado ;
 
 switch (calculo.operacao){
     case 1:
         calculo.simbolo = "+";
-        console.log(calculo.num1 + calculo.num2);
+        resultado = calculo.num1 + calculo.num2;
+        console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
         break;
     case 2:
         calculo.simbolo = "-";
-        console.log(calculo.num1 - calculo.num2);
+        resultado = calculo.num1 - calculo.num2;
+        console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
         break;
     case 3:
         calculo.simbolo = "*";
-        console.log(calculo.num1 * calculo.num2);
+        resultado = calculo.num1 * calculo.num2;
+        console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
         break;
     case 4:
-    if (calculo.num2 <= 0) {
+    if (calculo.num2 === 0) {
         console.log("Erro: divisão por zero não é permitida.");
     }
     else {
         calculo.simbolo = "/";
-        console.log( calculo.num1 / calculo.num2);
-    }
+        resultado = calculo.num1 / calculo.num2;
+        console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
+    };
+        break;
+    case 5:
+        calculo.simbolo = "%";
+        resultado = calculo.num1 % calculo.num2;
+        console.log(`${calculo.num1} ${calculo.simbolo} ${calculo.num2} = ${resultado}`);
         break;
     default:
         console.log("Operação inválida.");
@@ -421,5 +434,46 @@ let loja = {
     saldo: 0,
 };
 
+let opcaoMenu;
+
+console.log(`============ MENU =================
+ 1 : Ver produtos | 2 : Comprar | 3 : Ver carrinho | 4 : Sair`);
+
+opcaoMenu = lerTeclado.questionInt("Digite a opcao escolhida: \n");
+
+const listaProdutos = [{
+    produto: "Mouse",
+    preco: 89.99
+},
+{
+    produto: "Teclado",
+    preco: 200.00
+},
+{
+    produto: "Monitor",
+    preco: 800.00
+}];
+
+switch (opcaoMenu) {
+    case 1:
+        console.table(listaProdutos)
+        break;
+    case 2:
+        let escolha = {
+            produto: lerTeclado.question("Qual o produto?\n"),
+            preco: lerTeclado.questionFloat("Qual o preco?\n"),
+        };
+        loja.saldo += escolha.preco;
+        console.log("Produto adicionado no carrinho");
+        break;
+    case 3:
+        console.log(`Total no carrinho: R$ ${loja.saldo}`);
+        break;
+    case 4:
+        console.log("Obrigado por visitar a TechShop!");
+        break;
+    default:
+        console.log("Opção inválida.");
+};
 
 console.log("_______________________________");
