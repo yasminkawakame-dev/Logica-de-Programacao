@@ -149,7 +149,7 @@ console.table(boletim);
 
 let aprovado = mediaNotas >= 6;
 let recuracao = mediaNotas >= 4 && mediaNotas < 6;
-let maiorQue9 = (aluno.nota1 || aluno.nota2 || aluno.nota3 || aluno.nota4 > 9);
+
 let maxima = (Math.max(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
 let minima = (Math.min(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
 
