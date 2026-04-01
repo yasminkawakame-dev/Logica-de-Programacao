@@ -258,55 +258,55 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-const jogada = ["pedra", "papel", "tesoura"];
-const computador = jogada[Math.floor(Math.random() * 3)];
+// const jogada = ["pedra", "papel", "tesoura"];
+// const computador = jogada[Math.floor(Math.random() * 3)];
 
-console.log(`1 – Pedra | 2 – Papel | 3 – Tesoura`);
+// console.log(`1 – Pedra | 2 – Papel | 3 – Tesoura`);
 
-let suaVez = lerTeclado.questionInt("Digite qual sua jogada:\n");
-let opcaoEscolhida;
+// let suaVez = lerTeclado.questionInt("Digite qual sua jogada:\n");
+// let opcaoEscolhida;
 
 
 
-switch (suaVez) {
-    case 1:
-        opcaoEscolhida = "pedra";
-        console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
-        if (opcaoEscolhida === computador) {
-            console.log("Empate");
-        } else if (computador === "tesoura") {
-            console.log("Ganhou")
-        } else {
-            console.log("Perdeu")
-        };
-        break;
-    case 2:
-        opcaoEscolhida = "papel";
-        console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
-        if (opcaoEscolhida === computador) {
-            console.log("Empate");
-        } else if (computador === "pedra") {
-            console.log("Ganhou")
-        } else {
-            console.log("Perdeu")
-        };
-        break;
-    case 3:
-        opcaoEscolhida = "tesoura";
-        console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
-        if (opcaoEscolhida === computador) {
-            console.log("Empate");
-        } else if (computador === "papel") {
-            console.log("Ganhou")
-        } else {
-            console.log("Perdeu")
-        };
-        break;
-    default:
-        console.log("Jogada inválida.");
-};
+// switch (suaVez) {
+//     case 1:
+//         opcaoEscolhida = "pedra";
+//         console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+//         if (opcaoEscolhida === computador) {
+//             console.log("Empate");
+//         } else if (computador === "tesoura") {
+//             console.log("Ganhou")
+//         } else {
+//             console.log("Perdeu")
+//         };
+//         break;
+//     case 2:
+//         opcaoEscolhida = "papel";
+//         console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+//         if (opcaoEscolhida === computador) {
+//             console.log("Empate");
+//         } else if (computador === "pedra") {
+//             console.log("Ganhou")
+//         } else {
+//             console.log("Perdeu")
+//         };
+//         break;
+//     case 3:
+//         opcaoEscolhida = "tesoura";
+//         console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+//         if (opcaoEscolhida === computador) {
+//             console.log("Empate");
+//         } else if (computador === "papel") {
+//             console.log("Ganhou")
+//         } else {
+//             console.log("Perdeu")
+//         };
+//         break;
+//     default:
+//         console.log("Jogada inválida.");
+// };
 
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -338,5 +338,96 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// console.log(`
+// ------------------------------ Menu Principal -------------------------------
+// 1 – Internet | 2 – TV | 3 – Telefone | 4 – Falar com atendente | 0 – Encerrar`);
+// let opcao = lerTeclado.questionInt("Digite qual opcao deseja:\n");
+
+// switch (opcao){
+//     case 1:
+//         console.log(`
+//         ----- ASSUNTO ------
+//         1 – Sem conexão
+//         2 – Conexão lenta
+//         3 – Wi-Fi não aparece
+//         ---------------------`);
+//         let subOpcao1 = lerTeclado.questionInt("Digite qual seria o assunto:\n");
+//         if (subOpcao1 === 1){
+//             console.log("Reinicie o aparelho.");           
+//         } else if (subOpcao1 === 2){
+//             console.log("Aproxime-se do roteador."); 
+//         } else if (subOpcao1 === 3) {
+//             console.log("Verifique se o Wi-fi está ligado."); 
+//         } else {
+//             console.log("Opção inválida.");
+//         }
+//         break;
+//     case 2:
+//         console.log(`
+//         ----- ASSUNTO -----
+//         1 – Sem sinal
+//         2 – Imagem ruim
+//         3 – Canais sumidos
+//         -------------------`);
+//         let subOpcao2 = lerTeclado.questionInt("Digite qual seria o assunto:\n");
+//         if (subOpcao2 === 1){
+//             console.log("Verifique os cabos.");           
+//         } else if (subOpcao2 === 2){
+//             console.log("Ajuste a antena."); 
+//         } else if (subOpcao2 === 3){
+//             console.log("Atualize os canais."); 
+//         } else {
+//             console.log("Opção inválida.");
+//         }
+//         break;
+//     case 3:
+//     case 4:
+//         console.log("Por favor, aguarde na linha.");
+//         break;
+//     case 0:
+//         console.log("Atendimento encerrado.");
+//         break;
+//     default:
+//         console.log("Opção inválida.");       
+// };
+
+// console.log("_______________________________");
+
+// ------------------------------------------------------------
+// DESAFIO 5 – TÁXI OU APP?
+// ------------------------------------------------------------
+// O usuário informa a distância em km e o horário (dia ou noite).
+// O programa calcula o preço estimado no táxi e em um app de corridas
+// e recomenda a opção mais barata.
+//
+// Tabela:
+//   Táxi: R$5 bandeirada + R$3/km (noite: R$4/km)
+//   App:  R$2 taxa fixa  + R$2/km (noite: R$2.50/km)
+
+// → Seu código aqui:
+
+let distancia = lerTeclado.questionFloat("Qual a distancia em km?\n");
+let horario = lerTeclado.question("Qual o periodo dia ou noite?")
+
+
+
 
 console.log("_______________________________");
+
+
+// ------------------------------------------------------------
+// DESAFIO 6 – CRIE SEU PERSONAGEM DE RPG
+// ------------------------------------------------------------
+// O usuário responde 3 ou mais perguntas de multipla escolha (crie outras se quiser)
+//  ex: prefere magia ou força?
+//      prefere ataque ou defesa?
+//      prefere floresta ou cidade?
+//      prefere dia ou noite?
+//      prefere furtividade ou agressividade?
+//      prefere ataque a distância ou corpo a corpo?
+// Com base nas respostas, o programa revela uma classe de personagem
+// (guerreiro, mago, arqueiro, ladino, etc).
+//
+// Você pode criar um sistema de atribuição de pontos para cada resposta
+// e determinar a classe final com base na pontuação total,
+// ou simplesmente fazer verificações diretas. Use a criatividade para resolver este desafio.
