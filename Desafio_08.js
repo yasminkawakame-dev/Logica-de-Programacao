@@ -3,7 +3,7 @@
 // ============================================================
 // Instruções: resolva cada desafio no espaço indicado.
 // ============================================================
-
+let lerTeclado = require('readline-sync');
 
 // ------------------------------------------------------------
 // DESAFIO 1 – Simulador de caixa de restaurante
@@ -38,9 +38,114 @@
 
 // → Seu código aqui:
 
+// const listaCardapio = [
+//     { id: 1, nome: "Frango Grelhado", preco: 32.00 },
+//     { id: 2, nome: "Filé ao Molho", preco: 45.00 },
+//     { id: 3, nome: "Massa Italiana", preco: 28.00 },
+//     { id: 4, nome: "Salada Caesar", preco: 22.00 },
+//     { id: 5, nome: "Sopa do Dia", preco: 18.00 }
+//   ];
+  
+//   const listaBebida = [
+//     { id: 1, nome: "Suco Natural", preco: 9.00 },
+//     { id: 2, nome: "Refrigerante", preco: 7.00 },
+//     { id: 3, nome: "Água", preco: 4.00 },
+//     { id: 4, nome: "Sem bebida", preco: 0.00 }
+//   ];
 
-console.log("_______________________________");
+// console.table(listaCardapio);
+// console.table(listaBebida);
 
+// let perguntas = {
+//     nome: lerTeclado.question("Qual o seu nome? \n"),
+//     pratoDesejado: lerTeclado.questionInt("Digite o numero do prato escolhido? \n"),
+//     bebidaDesejada: lerTeclado.questionInt("Digite o numero da bebida escolhida? \n"),
+// };
+
+// let precoPrato ;
+// let prato ;
+// let bebida ;
+// let precoBebida ;
+
+// switch (perguntas.pratoDesejado){
+//     case 1:
+//         prato = "Frango Grelhado";
+//         precoPrato = 32.00;
+//         break;
+//     case 2:
+//         prato ="Filé ao Molho";
+//         precoPrato = 45.00;
+//         break;
+//     case 3:
+//         prato = "Massa Italiana";
+//         precoPrato = 28.00;
+//         break;
+//     case 4:
+//         prato = "Salada Caesar";
+//         precoPrato = 22.00;
+//         break;
+//     case 5:
+//         prato = "Sopa do Dia";
+//         precoPrato = 18.00;
+//         break;
+//     default:
+//         console.log("Item invalido");
+//         prato = "Item invalido";
+//         precoPrato = 0.00;    
+// };
+
+// switch (perguntas.bebidaDesejada){
+//     case 1:
+//         bebida = "Suco Natural";
+//         precoBebida = 9.00;
+//         break;
+//     case 2:
+//         bebida = "Refrigerante";
+//         precoBebida = 7.00;
+//         break;
+//     case 3:
+//         bebida = "Água";
+//         precoBebida = 4.00;
+//         break;
+//     case 4:
+//         bebida = "Sem bebida";
+//         precoBebida = 0.00;
+//         break;
+//     default:
+//         console.log("Item invalido");
+//         bebida = "Item invalido";
+//         precoBebida = 0.00;
+// };
+
+// let pedido = {
+//     nomeCliente: perguntas.nome,
+//     nomePrato: prato,
+//     precoPrato: precoPrato,
+//     nomeBebida: bebida,
+//     precoBebida: precoBebida,
+//     total: precoPrato + precoBebida,
+// };
+
+// console.log(pedido);
+
+// let pix = lerTeclado.keyInYN("Vai pagar no pix?");
+
+// if (pix) {
+//     let desconto = pedido.total * 0.10;
+//     pedido.total = pedido.total - desconto;
+// };
+
+// console.table(pedido);
+
+// console.log(`
+// ----------- RECIBO -----------
+// Cliente: ${pedido.nomeCliente}
+// Prato: ${pedido.nomePrato} - R$ ${pedido.precoPrato.toFixed(2)}
+// Bebida: ${pedido.nomeBebida} - R$ ${pedido.precoBebida.toFixed(2)}
+// Total: ${pedido.total}
+// -------------------------------`);
+
+// console.log("_______________________________");
 
 // ------------------------------------------------------------
 // DESAFIO 2 – Conversor de unidades
@@ -69,8 +174,72 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let valorOriginal = lerTeclado.questionFloat("Qual o valor para converter?\n");
+// let conversao = lerTeclado.questionInt(
+//     `Quer converter o valor para? Digite o número da opção.
+//         1 - Km para Milhas. 
+//         2 - Milhas para Km. 
+//         3 - Celsius para Fahrenheit. 
+//         4 - Fahrenheit para Celsius. 
+//         5 - Kg para Libras. 
+//         6 - Libras para Kg.\n`
+// );
 
-console.log("_______________________________");
+// let unidadeOriginal ;
+// let resultado ;
+// let unidadeResultado ;
+// let tipo ;
+
+// switch (conversao){
+//     case 1:
+//         tipo = "Km para Milhas.";
+//         unidadeOriginal = "Km";
+//         resultado = valorOriginal * 0.621371;
+//         unidadeResultado = "Milhas"
+//         break;
+//     case 2:
+//         tipo = "Milhas para Km.";
+//         unidadeOriginal = "Milhas";
+//         resultado = valorOriginal * 1.60934;
+//         unidadeResultado = "Km"
+//         break;
+//     case 3:
+//         tipo = "Celsius para Fahrenheit.";
+//         unidadeOriginal = "Celsius";
+//         esultado = (valorOriginal * 9/5) + 32;
+//         unidadeResultado = "Fahrenheit"
+//         break;
+//     case 4:
+//         tipo = "Fahrenheit para Celsius."
+//         unidadeOriginal = "Fahrenheit";
+//         resultado = (valorOriginal - 32) * 5/9;
+//         unidadeResultado = "Celsius"
+//         break;
+//     case 5:
+//         tipo = "Kg para Libras."
+//         unidadeOriginal = "Kg";
+//         resultado = valorOriginal * 2.20462;
+//         unidadeResultado = "Libras"
+//         break;  
+//     case 5:
+//         tipo = "Libras para Kg."
+//         unidadeOriginal = "Libras";
+//         resultado = valorOriginal / 2.20462;
+//         unidadeResultado = "Kg"
+//         break;
+//     default:
+//         console.log("Tipo de conversão inválido.");    
+// };
+
+// let objetoConversao = {tipo, valorOriginal, unidadeOriginal, resultado, unidadeResultado};
+
+// console.table(objetoConversao);
+
+// console.log(`
+// Conversão: ${tipo}
+// Então ${valorOriginal} ${unidadeOriginal} = ${resultado} ${unidadeResultado}`);
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -88,6 +257,42 @@ console.log("_______________________________");
 // e) Exiba o resultado final.
 
 // → Seu código aqui:
+
+const jogada = ["pedra", "papel", "tesoura"];
+const computador = jogada[Math.floor(Math.random() * 3)];
+
+console.log(`1 – Pedra | 2 – Papel | 3 – Tesoura`);
+
+let suaVez = lerTeclado.questionInt("Digite qual sua jogada:\n");
+let opcaoEscolhida ;
+
+switch (suaVez){
+    case 1:
+        opcaoEscolhida = "pedra";
+        break;
+    case 2:
+        opcaoEscolhida = "papel";
+        break;
+    case 3:
+        opcaoEscolhida = "tesoura";
+        break;
+    default:
+        console.log("Jogada inválida.");
+};
+
+console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+
+switch (opcaoEscolhida){
+    case 1:
+        if (computador === opcaoEscolhida){
+            console.log("Empate.");
+        } 
+        break;
+}
+
+
+
+
 
 
 console.log("_______________________________");
