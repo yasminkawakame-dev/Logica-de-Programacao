@@ -45,7 +45,7 @@ let lerTeclado = require('readline-sync');
 //     { id: 4, nome: "Salada Caesar", preco: 22.00 },
 //     { id: 5, nome: "Sopa do Dia", preco: 18.00 }
 //   ];
-  
+
 //   const listaBebida = [
 //     { id: 1, nome: "Suco Natural", preco: 9.00 },
 //     { id: 2, nome: "Refrigerante", preco: 7.00 },
@@ -142,7 +142,7 @@ let lerTeclado = require('readline-sync');
 // Cliente: ${pedido.nomeCliente}
 // Prato: ${pedido.nomePrato} - R$ ${pedido.precoPrato.toFixed(2)}
 // Bebida: ${pedido.nomeBebida} - R$ ${pedido.precoBebida.toFixed(2)}
-// Total: ${pedido.total}
+// Total: ${pedido.total.toFixed(2)}
 // -------------------------------`);
 
 // console.log("_______________________________");
@@ -206,7 +206,7 @@ let lerTeclado = require('readline-sync');
 //     case 3:
 //         tipo = "Celsius para Fahrenheit.";
 //         unidadeOriginal = "Celsius";
-//         esultado = (valorOriginal * 9/5) + 32;
+//         resultado = (valorOriginal * 9/5) + 32;
 //         unidadeResultado = "Fahrenheit"
 //         break;
 //     case 4:
@@ -221,7 +221,7 @@ let lerTeclado = require('readline-sync');
 //         resultado = valorOriginal * 2.20462;
 //         unidadeResultado = "Libras"
 //         break;  
-//     case 5:
+//     case 6:
 //         tipo = "Libras para Kg."
 //         unidadeOriginal = "Libras";
 //         resultado = valorOriginal / 2.20462;
@@ -264,36 +264,47 @@ const computador = jogada[Math.floor(Math.random() * 3)];
 console.log(`1 – Pedra | 2 – Papel | 3 – Tesoura`);
 
 let suaVez = lerTeclado.questionInt("Digite qual sua jogada:\n");
-let opcaoEscolhida ;
+let opcaoEscolhida;
 
-switch (suaVez){
+
+
+switch (suaVez) {
     case 1:
         opcaoEscolhida = "pedra";
+        console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+        if (opcaoEscolhida === computador) {
+            console.log("Empate");
+        } else if (computador === "tesoura") {
+            console.log("Ganhou")
+        } else {
+            console.log("Perdeu")
+        };
         break;
     case 2:
         opcaoEscolhida = "papel";
+        console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+        if (opcaoEscolhida === computador) {
+            console.log("Empate");
+        } else if (computador === "pedra") {
+            console.log("Ganhou")
+        } else {
+            console.log("Perdeu")
+        };
         break;
     case 3:
         opcaoEscolhida = "tesoura";
+        console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
+        if (opcaoEscolhida === computador) {
+            console.log("Empate");
+        } else if (computador === "papel") {
+            console.log("Ganhou")
+        } else {
+            console.log("Perdeu")
+        };
         break;
     default:
         console.log("Jogada inválida.");
 };
-
-console.log(`Voce: ${opcaoEscolhida} | Computador: ${computador}`);
-
-switch (opcaoEscolhida){
-    case 1:
-        if (computador === opcaoEscolhida){
-            console.log("Empate.");
-        } 
-        break;
-}
-
-
-
-
-
 
 console.log("_______________________________");
 
