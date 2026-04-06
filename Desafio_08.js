@@ -406,13 +406,31 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-let distancia = lerTeclado.questionFloat("Qual a distancia em km?\n");
-let horario = lerTeclado.question("Qual o periodo dia ou noite?")
+// let distancia = lerTeclado.questionFloat("Qual a distancia em km?\n");
+// let horario = lerTeclado.question("Qual o periodo: dia ou noite?\n")
 
+// let precoTaxi;
+// let precoApp;
 
+// if (horario === "dia") {
+//     precoTaxi = 5 + (3 * distancia);
+//     precoApp = 2 + (2 * distancia);
+// } else if (horario === "noite") {
+//     precoTaxi = 5 + (4 * distancia);
+//     precoApp = 2 + (2.50 * distancia);
+// } else {
+//     console.log("Horario invalido");
+// }
 
+// if (precoApp < precoTaxi){
+//     console.log("Opçao App é mais barata");
+// } else if (precoTaxi < precoApp){
+//     console.log("Opçao Taxi é mais barata");
+// } else {
+//     console.log("Ambos precos são iguais");
+// }
 
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -431,3 +449,107 @@ console.log("_______________________________");
 // Você pode criar um sistema de atribuição de pontos para cada resposta
 // e determinar a classe final com base na pontuação total,
 // ou simplesmente fazer verificações diretas. Use a criatividade para resolver este desafio.
+
+// console.log(`Responda essas perguntas para descobrir sua classe:`);
+
+
+let poder = lerTeclado.question("Prefere magia ou força?\n").toLowerCase();
+if (poder != "magia" && poder != "forca") {
+    console.log("Dado inválido!")
+}
+let combate = lerTeclado.question("Prefere ataque ou defesa?\n").toLowerCase();
+if (combate !== "ataque" && combate !== "defesa") {
+    console.log("Dado inválido!");
+}
+let ambiente = lerTeclado.question("Prefere floresta ou cidade?\n").toLowerCase();
+if (ambiente !== "floresta" && ambiente !== "cidade") {
+    console.log("Dado inválido!");
+}
+let periodo = lerTeclado.question("Prefere dia ou noite?\n").toLowerCase();
+if (periodo !== "dia" && periodo !== "noite") {
+    console.log("Dado inválido!");
+}
+let estilo = lerTeclado.question("Prefere furtividade ou agressividade?\n").toLowerCase();
+if (estilo !== "furtividade" && estilo !== "agressividade") {
+    console.log("Dado inválido!");
+}
+let alcance = lerTeclado.question("Prefere ataque a distância ou corpo a corpo?\n").toLowerCase();
+if (alcance !== "ataque a distancia" && alcance !== "corpo a corpo") {
+    console.log("Dado inválido!");
+}
+
+let mago = 0;
+let guerreiro = 0;
+let arqueiro = 0;
+let ladino = 0;
+
+if (poder === "magia") mago++
+
+if (poder === "força") {
+    guerreiro++
+    arqueiro++
+}
+
+if (combate === "ataque") {
+    arqueiro++
+    ladino++
+}
+
+if (combate === "defesa") {
+    mago++
+    guerreiro++
+    ladino++
+}
+
+if (ambiente === "floresta") {
+    mago++
+    arqueiro++
+}
+
+if (ambiente === "cidade") {
+    guerreiro++
+    ladino++
+}
+
+if (periodo === "dia") {
+    arqueiro++
+    guerreiro++
+}
+
+if (periodo === "noite") {
+    mago++
+    ladino++
+}
+
+if (estilo === "furtividade") ladino++ 
+
+if (estilo === "agressividade") {
+    guerreiro++
+    arqueiro++
+}
+
+if (alcance === "ataque a distancia") {
+    arqueiro++
+    mago++
+}
+
+if (alcance === "corpo a corpo") {
+    guerreiro++
+    ladino++
+}
+
+let classe = "";
+
+if (mago > guerreiro && mago > arqueiro && mago > ladino) {
+    classe = "Mago";
+} else if (guerreiro > mago && guerreiro > arqueiro && guerreiro > ladino) {
+    classe = "Guerreiro";
+} else if (arqueiro > mago && arqueiro > guerreiro && arqueiro > ladino) {
+    classe = "Arqueiro";
+} else if (ladino > mago && ladino > guerreiro && ladino > arqueiro) {
+    classe = "Ladino";
+} else {
+    classe = "Empate entre classes!";
+}
+
+console.log("Sua classe é:", classe);
