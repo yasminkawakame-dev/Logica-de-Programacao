@@ -148,7 +148,12 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-let nomeViajante = lerTeclado.question("Nome do viajante:\n");
+let nomeViajante = lerTeclado.question("Nome do viajante:\n"); 
+if (nomeViajante === ""){
+    console.log("Nome invalido");
+    process.exit()
+} 
+
 let idadeViajante = lerTeclado.questionInt("Idade do viajante:\n");
 let orcamento = lerTeclado.questionInt(`
     Orcamento 
@@ -159,6 +164,17 @@ let orcamento = lerTeclado.questionInt(`
 let resp1;
 let resp2;
 let resp3;
+let orcamentoTexto;
+
+if(orcamento === 1){
+    orcamentoTexto = "Economico";
+} else if (orcamento === 2){
+    orcamentoTexto = "Moderado";
+} else if (orcamento === 3){
+    orcamentoTexto = "Luxo"
+} else {
+    orcamentoTexto = "Invalido"
+}
 
 switch(orcamento){
     case 1:
@@ -197,26 +213,32 @@ switch (resp1) {
         console.log("Opção inválida. Encerrando o formulário.");       
 }
 
+let destino;
+
 if (resp1 === 1 && resp2 === 1) {
     resp3 = lerTeclado.questionInt(`
-    Como você prefere sua viagem?
-    1 - Animada — praias badaladas e muito agito
-    2 - Tranquila — sossego e natureza preservada\n`)
+        Como você prefere sua viagem?
+        1 - Animada — praias badaladas e muito agito
+        2 - Tranquila — sossego e natureza preservada\n`)
+} else if (resp1 === 1 && resp2 === 2){
+    destino = "Amazônia (Brasil) ou Costa Rica";
 } else if (resp1 === 2 && resp2 === 1) {
     resp3 = lerTeclado.questionInt(`
-    Qual e o seu objetivo?
-    1 - Praticar esportes de inverno (esqui, snowboard)
-    2 - Contemplar a paisagem nevada e relaxar\n`);
-} else if (resp1 === 3 && resp2 === 1) {
+        Qual e o seu objetivo?
+        1 - Praticar esportes de inverno (esqui, snowboard)
+        2 - Contemplar a paisagem nevada e relaxar\n`);
+} else if (resp1 === 2 && resp2 === 2){
+    destino = "Serra Gaúcha (Brasil) ou Patagônia Chilena"
+} else if (resp1 === 3 && resp2 === 1){
     resp3 = lerTeclado.questionInt(`
-    Qual região você prefere?
-    1 - Europa
-    2 - América do Sul\n`)
+        Qual região você prefere?
+        1 - Europa
+        2 - América do Sul\n`)
+} else if (resp1 === 3 && resp2 === 2){
+    destino = "Chapada dos Veadeiros ou Torres del Paine";
 } else {
     console.log("Opção inválida. Encerrando o formulário.");
 }
-
-let destino;
 
 if (resp1 === 1 && resp2 === 1 && resp3 === 1) {
     destino = "Cancún (México) ou Fortaleza (Brasil)"
@@ -244,28 +266,26 @@ let dica;
 
 switch (orcamento) {
     case 1:
-        dica = "Dica: procure voos com antecedência e use hostels ou Airbnb!"
+        dica = "Dica Econômico → procure voos com antecedência e use hostels ou Airbnb!"
         break;
     case 2:
-        dica = "Dica: hotéis 3 estrelas e pacotes combinados são ótimas opções!"
+        dica = "Dica Moderado → hotéis 3 estrelas e pacotes combinados são ótimas opções!"
         break;
     case 3:
-        dica = "Dica: resorts all-inclusive e voos executivos são a sua praia!"
+        dica = "Dica Luxo → resorts all-inclusive e voos executivos são a sua praia!"
         break
     default:
         console.log("Opcao invalida");
 };
 
-if (destino === "Cancún (México) ou Fortaleza (Brasil)" || destino === "Maldivas ou Fernando de Noronha (Brasil)" || destino === "Maldivas ou Fernando de Noronha (Brasil)" || destino === "Amazônia (Brasil) ou Costa Rica" 
-|| destino === "Aspen (EUA) ou Bariloche (Argentina)" || destino === "Ushuaia (Argentina) ou Lapônia (Finlândia)" || destino === "Serra Gaúcha (Brasil) ou Patagônia Chilena" || destino === "Lisboa, Barcelona ou Roma"
-|| destino === "Buenos Aires, Cusco ou Cartagena" || destino === "Chapada dos Veadeiros ou Torres del Paine"){
+if (destino){
     console.log(`
     ===============================================
       |   RECOMENDAÇÃO DA AGÊNCIA VOYAGER           |
       ===============================================
       |   Viajante : ${nomeViajante}                |
       |   Idade    : ${idadeViajante} anos          |
-      |   Orçamento: ${orcamento}                   |
+      |   Orçamento: ${orcamentoTexto}                   |
       |   Destino  : ${destino}                     |
       ===============================================
     
