@@ -24,10 +24,34 @@
 // d) Armazene cada mês como objeto { mes, saldo } em um array e exiba com console.table().
 
 // → Seu código aqui:
+let lerTeclado = require('readline-sync');
 
+// let saldoInicial = lerTeclado.questionFloat("Saldo inicial:\n");
+// let taxaJuros = lerTeclado.questionFloat("Qual a taxa de juros mensal?\n");
+// let meses = lerTeclado.questionInt("Numero meses:\n");
+// let saldoFinal = saldoInicial;
+// let historico = [];
 
-console.log("_______________________________");
+// for (let i = 1; i <= meses; i++) {
+//     saldoFinal = saldoFinal * (1 + taxaJuros / 100);
+//     console.log(`Mês: ${i} - R$ ${saldoFinal.toFixed(2)}`);
 
+//     historico.push({
+//         meses: i,
+//         saldo: saldoFinal.toFixed(2)
+//     })
+// }
+
+// let lucro = saldoFinal - saldoInicial;
+
+// console.log(`
+// Seu saldo final: R$ ${saldoFinal.toFixed(2)}
+// Seu lucro foi de: R$ ${lucro.toFixed(2)}
+// `);
+
+// console.table(historico)
+
+// console.log("_______________________________");
 
 // ------------------------------------------------------------
 // DESAFIO 2 – Cadastro e relatório de alunos
@@ -53,6 +77,35 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let turma = lerTeclado.questionInt("Quantos alunos serão cadastrados?\n");
+let alunos = [];
+
+for (let i = 1; i <= turma; i++) {
+    let aluno = {
+        nome: lerTeclado.question("Nome aluno:\n"),
+        nota1: lerTeclado.questionFloat("Qual a primeira nota?\n"),
+        nota2: lerTeclado.questionFloat("Qual a segunda nota?\n"),
+        nota3: lerTeclado.questionFloat("Qual a terceira nota?\n"),
+        media: 0,
+        situacao: ""
+    };
+
+    aluno.media = ((aluno.nota1 + aluno.nota2 + aluno.nota3) / 3);
+
+    if (aluno.media >= 7) {
+        aluno.situacao = "Aprovado"
+    } else if (aluno.media >= 5 && aluno.media < 7) {
+        aluno.situacao = "Recuperação"
+    } else if (aluno.media < 5) {
+        aluno.situacao = "Reprovado"
+    }
+
+    console.log(`${aluno.nome} | Média: ${aluno.media.toFixed(2)} | ${aluno.situacao}`);
+
+    alunos.push(aluno);
+}
+
+console.table(alunos);
 
 console.log("_______________________________");
 
