@@ -157,5 +157,47 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+const vendas = [12500, 9800, 15200, 11000, 13750, 8900, 17300, 14600, 10200, 16800, 19500, 22000];
+let meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+let totalVendas = vendas.reduce((acumulador, valorAtual) => acumulador + valorAtual);
+let mediaVendas = 0
+mediaVendas = (mediaVendas + totalVendas) / vendas.length;
+let maiorVenda;
+let menorVenda;
+let situacao;
+
+for (let i = 0; i < vendas.length; i++) {
+    console.log(`Mês: ${meses[i]}, ${vendas[i]}`);
+}
+
+for (let i = 0; i < vendas.length; i++) {
+    if (i == 0) {
+        maiorVenda = vendas[0]
+    } else if (maiorVenda < vendas[i]) {
+        maiorVenda = vendas[i]
+    }
+}
+console.log(maiorVenda);
+
+for (let i = 0; i < vendas.length; i++) {
+    if (i == 0) {
+        menorVenda = vendas[0]
+    } else if (menorVenda > vendas[i]) {
+        menorVenda = vendas[i]
+    }
+}
+console.log(menorVenda);
+
+for (let i = 0; i < vendas.length; i++) {
+    if(vendas[i] > mediaVendas){
+        situacao = "Acima da media"
+    } else if (vendas[i] < mediaVendas){
+        situacao = "Abaixo da media"
+    }
+    console.log(mediaVendas);
+    
+    console.log(`${i}, ${vendas[i]}, ${situacao}`);
+}
+
 
 console.log("_______________________________");
