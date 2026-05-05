@@ -4,7 +4,6 @@
 // Instruções: resolva cada desafio no espaço indicado.
 // ============================================================
 
-
 // ------------------------------------------------------------
 // DESAFIO 1 – Progressão de saldo bancário
 // ------------------------------------------------------------
@@ -26,32 +25,33 @@
 // → Seu código aqui:
 let lerTeclado = require('readline-sync');
 
-// let saldoInicial = lerTeclado.questionFloat("Saldo inicial:\n");
-// let taxaJuros = lerTeclado.questionFloat("Qual a taxa de juros mensal?\n");
-// let meses = lerTeclado.questionInt("Numero meses:\n");
-// let saldoFinal = saldoInicial;
-// let historico = [];
+let saldoInicial = lerTeclado.questionFloat("Saldo inicial:\n");
+if (saldoInicial != 0) {
+    let taxaJuros = lerTeclado.questionFloat("Qual a taxa de juros mensal?\n");
+    let meses1 = lerTeclado.questionInt("Numero meses:\n");
+    let saldoFinal = saldoInicial;
+    let historico = [];
 
-// for (let i = 1; i <= meses; i++) {
-//     saldoFinal = saldoFinal * (1 + taxaJuros / 100);
-//     console.log(`Mês: ${i} - R$ ${saldoFinal.toFixed(2)}`);
+    for (let i = 1; i <= meses1; i++) {
+        saldoFinal = saldoFinal * (1 + taxaJuros / 100);
+        console.log(`Mês: ${i} - R$ ${saldoFinal.toFixed(2)}`);
 
-//     historico.push({
-//         meses: i,
-//         saldo: saldoFinal.toFixed(2)
-//     })
-// }
+        historico.push({
+            meses: i,
+            saldo: saldoFinal.toFixed(2)
+        })
+    }
 
-// let lucro = saldoFinal - saldoInicial;
+    let lucro = saldoFinal - saldoInicial;
 
-// console.log(`
-// Seu saldo final: R$ ${saldoFinal.toFixed(2)}
-// Seu lucro foi de: R$ ${lucro.toFixed(2)}
-// `);
+    console.log(`
+Seu saldo final: R$ ${saldoFinal.toFixed(2)}
+Seu lucro foi de: R$ ${lucro.toFixed(2)}
+`);
 
-// console.table(historico)
-
-// console.log("_______________________________");
+    console.table(historico)
+}
+console.log("_______________________________");
 
 // ------------------------------------------------------------
 // DESAFIO 2 – Cadastro e relatório de alunos
@@ -104,8 +104,9 @@ for (let i = 1; i <= turma; i++) {
 
     alunos.push(aluno);
 }
-
-console.table(alunos);
+if (turma != 0) {
+    console.table(alunos);
+}
 
 console.log("_______________________________");
 
@@ -131,6 +132,36 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+let tentativas = 0;
+let venceu = false
+let maxtentativas = 7
+let secreto = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+
+console.log("Tente adivinhar o número entre 1 e 100!\n");
+
+for (let i = 1; i <= maxtentativas; i++) {
+    let palpite = lerTeclado.questionInt("Qual o numero?\n");
+    tentativas++;
+
+    if (palpite === secreto) {
+        console.log(`Parabéns! Você acertou em ${tentativas} tentativa(s)!`);
+        venceu = true
+        break;
+    } else if (palpite > secreto) {
+        console.log("Muito alto! Tente um número menor.");
+        console.log(`Faltam ${maxtentativas - i} tentativas`);
+    } else {
+        console.log("Muito baixo! Tente um número maior.");
+        console.log(`Faltam ${maxtentativas - i} tentativas`);
+    }
+}
+if (!venceu) {
+    console.log(`Game over! O número era ${secreto}.`)
+}
+
+console.log(`Número secreto: ${secreto}
+Tentativas usadas: ${tentativas}
+Resultado: ${venceu ? "Vitória" : "Derrota"}`);
 
 console.log("_______________________________");
 
@@ -158,46 +189,57 @@ console.log("_______________________________");
 // → Seu código aqui:
 
 const vendas = [12500, 9800, 15200, 11000, 13750, 8900, 17300, 14600, 10200, 16800, 19500, 22000];
-let meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-let totalVendas = vendas.reduce((acumulador, valorAtual) => acumulador + valorAtual);
-let mediaVendas = 0
-mediaVendas = (mediaVendas + totalVendas) / vendas.length;
-let maiorVenda;
-let menorVenda;
-let situacao;
+let meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+let total = 0;
+
+for (let i = 0; i < vendas.length; i++) {
+    total += vendas[i];
+}
+let media = total / vendas.length;
 
 for (let i = 0; i < vendas.length; i++) {
     console.log(`Mês: ${meses[i]}, ${vendas[i]}`);
 }
 
-for (let i = 0; i < vendas.length; i++) {
-    if (i == 0) {
-        maiorVenda = vendas[0]
-    } else if (maiorVenda < vendas[i]) {
-        maiorVenda = vendas[i]
+let maior = vendas[0];
+let mesMaior = meses[0];
+let menor = vendas[0];
+let mesMenor = meses[0];
+
+for (let i = 1; i < vendas.length; i++) {
+    if (vendas[i] > maior) {
+        maior = vendas[i];
+        mesMaior = meses[i];
+    }
+    if (vendas[i] < menor) {
+        menor = vendas[i];
+        mesMenor = meses[i];
     }
 }
-console.log(maiorVenda);
+
+let acima = 0;
+let abaixo = 0;
+let relatorio = [];
 
 for (let i = 0; i < vendas.length; i++) {
-    if (i == 0) {
-        menorVenda = vendas[0]
-    } else if (menorVenda > vendas[i]) {
-        menorVenda = vendas[i]
+    let situacao;
+    if (vendas[i] > media) {
+        situacao = "Acima da média";
+        acima++;
+    } else {
+        situacao = "Abaixo da média";
+        abaixo++;
     }
-}
-console.log(menorVenda);
 
-for (let i = 0; i < vendas.length; i++) {
-    if(vendas[i] > mediaVendas){
-        situacao = "Acima da media"
-    } else if (vendas[i] < mediaVendas){
-        situacao = "Abaixo da media"
-    }
-    console.log(mediaVendas);
-    
-    console.log(`${i}, ${vendas[i]}, ${situacao}`);
+    console.log(`${meses[i]}: R$ ${vendas[i].toFixed(2)} – ${situacao}`);
+
+    relatorio.push({
+        mes: meses[i],
+        venda: vendas[i],
+        situacao: situacao
+    });
 }
 
+console.table(relatorio);
 
 console.log("_______________________________");
