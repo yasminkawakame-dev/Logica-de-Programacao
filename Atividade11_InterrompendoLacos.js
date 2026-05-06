@@ -59,25 +59,32 @@ const notasAlunoB = [8, 4.5, 6.3, 9];
 
 // → Seu código aqui:
 
+let aprovadoA = true;
+
 for (let i = 0; i < notasAlunoA.length; i++) {
-    if (notasAlunoA[i] >= 5) {
-        continue;
-    } else if (notasAlunoA[i] < 5) {
-        console.log(`Reprovado na nota ${notasAlunoA[i]}`);
+    if (notasAlunoA[i] < 5) {
+        console.log(`Reprovado na nota ${notasAlunoA[i]} (índice ${i})`);
+        aprovadoA = false;
         break;
-    } else {
-        console.log("Aprovado!")
     }
 }
 
+if (aprovadoA) {
+    console.log("Aprovado!");
+}
+
+let aprovadoB = true;
+
 for (let i = 0; i < notasAlunoB.length; i++) {
-    if (notasAlunoB[i] >= 5) {
-        console.log("Aprovado!");
-        continue;
-    } else if (notasAlunoB[i] < 5) {
-        console.log(`Reprovado na nota ${notasAlunoB[i]}`);
+    if (notasAlunoB[i] < 5) {
+        console.log(`Reprovado na nota ${notasAlunoB[i]} (índice ${i})`);
+        aprovadoB = false;
         break;
     }
+}
+
+if (aprovadoB) {
+    console.log("Aprovado!");
 }
 console.log("_______________________________");
 
@@ -165,6 +172,9 @@ const alunos = [
 
 // → Seu código aqui:
 
+const primeiraMenorNota = alunos.reduce((ac, aluno) => {
+    return aluno.nota
+}, Infinity)
 
 console.log("_______________________________");
 
@@ -214,17 +224,19 @@ console.log("_______________________________");
 // e) Ao final: "Laço encerrado em i = <i> | Soma final: <soma>"
 
 // → Seu código aqui:
-let somaMultiplo = 0;
 
-for(let i = 1; i <= 50; i++){
-    if(i % 5 == 0){
-        somaMultiplo =+ i
+let somaTotal = 0;
+
+for (let i = 1; i <= 50; i++) {
+    if (i % 5 === 0) {
         continue
-    } else if (somaMultiplo > 200){
+    } else if (somaTotal > 200){
+        console.log(`Laco encerrado em ${i - 1} | Soma final ${somaTotal}`);
         break
-    } else {
-        soma++
+    } else if (i % 5 != 0 ) {
+        somaTotal = somaTotal + i;
     }
+    console.log(`Somando: ${i} | Acumulado: ${somaTotal}`);
 }
 
 
