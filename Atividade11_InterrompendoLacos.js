@@ -140,13 +140,15 @@ let quantidadePositivos = 0;
 
 while (numero != 0) {
     numero = lerTeclado.questionInt("Qual o numero:\n");
+
     if (numero < 0) {
         console.log("Ignorando numero negativo");
         continue;
-    } else if (numero != 0) {
-        console.log("Tente novamente");
-        soma = soma + numero
-        quantidadePositivos++
+
+    } 
+    if (numero > 0) {
+        soma += numero;
+        quantidadePositivos++;
     }
 }
 console.log(`Soma dos positivos: ${soma}`);
@@ -172,9 +174,15 @@ const alunos = [
 
 // → Seu código aqui:
 
-const primeiraMenorNota = alunos.reduce((ac, aluno) => {
-    return aluno.nota
-}, Infinity)
+let menorNota = [];
+
+for(let i = 0; i < alunos.length; i++){
+    if(alunos[i].nota < 5){
+        menorNota.push(alunos[i])
+        console.log(menorNota);
+        break;
+    }
+}
 
 console.log("_______________________________");
 

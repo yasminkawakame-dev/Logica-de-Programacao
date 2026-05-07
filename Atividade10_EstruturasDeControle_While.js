@@ -141,32 +141,30 @@ let lerTeclado = require('readline-sync');
 
 // let usuario;
 
-// do {
-//     console.log("1 – Exibir hora atual");
-//     console.log("2 – Exibir data atual");
-//     console.log("0 – Sair");
+do {
+    console.log("1 – Exibir hora atual");
+    console.log("2 – Exibir data atual");
+    console.log("0 – Sair");
 
-//     usuario = lerTeclado.questionInt("Digite a opcao desejada:\n");
+    usuario = lerTeclado.questionInt("Digite a opcao desejada:\n");
 
-//     switch (usuario) {
-//         case 1:
-//             let agora = new Date();
-//             console.log(agora.toLocaleTimeString('pt-BR'));
-//             break;
-//         case 2:
-//             let data = new Date();
-//             console.log(data.toLocaleDateString('pt-BR'));
-//             break;
-//         case 0:
-//             console.log("Saindo...");
-//             break;
-//         default:
-//             console.log("Opcao invalida.");
-//     }
+    switch (usuario) {
+        case 1:
+            console.log(new Date().toLocaleTimeString());
+            break;
+        case 2:
+            console.log( new Date().toLocaleDateString());
+            break;
+        case 0:
+            console.log("Saindo...");
+            break;
+        default:
+            console.log("Opcao invalida.");
+    }
 
-// } while (usuario != 0);
+} while (usuario != 0);
 
-// console.log("_______________________________");
+console.log("_______________________________");
 
 
 // ------------------------------------------------------------

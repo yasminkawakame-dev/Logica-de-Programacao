@@ -51,10 +51,10 @@ const heroi = {
     danoMax: 25
   };
   
-  // ============================================================
-  // INIMIGOS (não altere a estrutura — altere os valores se quiser)
-  // Remova o inimigo da lista se ele for derrotado
-  // ============================================================
+// ============================================================
+// INIMIGOS (não altere a estrutura — altere os valores se quiser)
+// Remova o inimigo da lista se ele for derrotado
+// ============================================================
   
   const inimigos = [
     { 
@@ -77,30 +77,53 @@ const heroi = {
     }
   ];
   
-  // ============================================================
-  // INÍCIO DO JOGO
-  // ============================================================
+// ============================================================
+// INÍCIO DO JOGO
+// ============================================================
   
   console.log("╔══════════════════════════╗");
   console.log("║   BEM VINDO(A) AO ....   ║");
   console.log("╚══════════════════════════╝");
   
-  // Peça o nome do herói e exiba as regras do jogo resumidamente.
-  // → Seu código aqui:
+// Peça o nome do herói e exiba as regras do jogo resumidamente.
+// → Seu código aqui:
+
+let lerTeclado = require('readline-sync');
+let nome = lerTeclado.question("Digite seu nome:\n");
+
+heroi.nome;
+
+console.log(`${heroi.nome}
+Parabéns você agora é um herói!!
+Mas terá que enfrentar uma sequência de 3 inimigos em batalhas por turnos.
+A cada turno, herói e inimigo atacam um ao outro simultaneamente.
+O combate continua até que um dos dois chegue a 0 ou menos de HP (pontos de vida).`)
   
+console.log("_______________________________");
   
-  console.log("_______________________________");
+// ============================================================
+// LOOP DE BATALHAS
+// ============================================================
   
-  // ============================================================
-  // LOOP DE BATALHAS
-  // ============================================================
-  
-  console.log("╔════════════════════════════╗");
-  console.log("║    VAMOS AS BATATALHAS!    ║");
-  console.log("╚════════════════════════════╝");
-  
-  // → Seu código aqui:
-  
+console.log("╔════════════════════════════╗");
+console.log("║    VAMOS AS BATATALHAS!    ║");
+console.log("╚════════════════════════════╝");
+// → Seu código aqui:
+
+let escolha = lerTeclado.questionInt(`
+-------------------------------------
+      1 - Atacar
+      2 - Defender
+      3 - Curar
+
+  DIGITE QUAL VAI SER SEU MOVIMENTO
+-------------------------------------\n`);
+
+if(escolha == 1){
+   
+}
+
+
   
   console.log("_______________________________");
   
@@ -126,3 +149,4 @@ const heroi = {
   //        "══════════════════════════════"
   
   // → Seu código aqui:
+

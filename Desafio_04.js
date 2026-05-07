@@ -135,23 +135,23 @@
 
 // → Seu código aqui:
 
-let aluno = {
-    nome: lerTeclado.question("Qual seu nome?"),
-    nota1: lerTeclado.questionInt("Primeira nota?"),
-    nota2: lerTeclado.questionInt("Segunda nota?"),
-    nota3: lerTeclado.questionInt("Terceira nota?"),
-    nota4: lerTeclado.questionInt("Quarta nota?"),
-};
+// let aluno = {
+//     nome: lerTeclado.question("Qual seu nome?"),
+//     nota1: lerTeclado.questionInt("Primeira nota?"),
+//     nota2: lerTeclado.questionInt("Segunda nota?"),
+//     nota3: lerTeclado.questionInt("Terceira nota?"),
+//     nota4: lerTeclado.questionInt("Quarta nota?"),
+// };
 
-let mediaNotas = (aluno.nota1 + aluno.nota2 + aluno.nota3 + aluno.nota4) / 4;
-let boletim = [aluno.nome, [aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4], mediaNotas];
-console.table(boletim);
+// let mediaNotas = (aluno.nota1 + aluno.nota2 + aluno.nota3 + aluno.nota4) / 4;
+// let boletim = [aluno.nome, [aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4], mediaNotas];
+// console.table(boletim);
 
-let aprovado = mediaNotas >= 6;
-let recuracao = mediaNotas >= 4 && mediaNotas < 6;
+// let aprovado = mediaNotas >= 6;
+// let recuracao = mediaNotas >= 4 && mediaNotas < 6;
 
-let maxima = (Math.max(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
-let minima = (Math.min(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
+// let maxima = (Math.max(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
+// let minima = (Math.min(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4));
 
 
 
@@ -173,6 +173,23 @@ console.log("_______________________________");
 // e) Use template literal identificando cada produto pelo nome.
 
 // → Seu código aqui:
+let quantidade = 3;
+let estoque = [];
+
+for(let i = 1; i <= quantidade; i++){
+
+    let nome = lerTeclado.question("Nome do produto:\n");
+    let preco = lerTeclado.questionFloat("Qual o preco?\n");
+    let quantidadeEstoque = lerTeclado.questionInt("Quantidade em estoque:\n");
+
+    estoque.push({
+        nome: nome,
+        preco: preco,
+        quantidadeEstoque: quantidadeEstoque
+    })
+}
+
+console.table(estoque)
 
 
 console.log("_______________________________");
