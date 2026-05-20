@@ -16,45 +16,46 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-let tabuleiro = [
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-    ["-", "-", "-"]];
+// let tabuleiro = [
+//     ["-", "-", "-"],
+//     ["-", "-", "-"],
+//     ["-", "-", "-"]];
 
-console.table(tabuleiro);
+// console.table(tabuleiro);
 
-let jogada = "X";
+// let jogada;
 
-for (let jogadas = 1; jogadas <= 1; jogadas++) {
+// for (let jogadas = 1; jogadas <= 5; jogadas++) {
+//     if(jogadas % 2 != 0){
+//         jogada = "X"
+//     } else {
+//         jogada = "O"
+//     }
 
-    let linha = lerTeclado.question(`Qual linha deseja marcar? De 0 a 2:\n`);
-    let coluna = lerTeclado.questionInt("Qual coluna deseja marcar? De 0 a 2\n");
+//     let linha = lerTeclado.questionInt(`Qual linha deseja marcar? De 0 a 2:\n`);
+//     if (linha > 2) {
+//         console.log("Tente novamente");
+//         jogadas--
+//         continue
+//     }
 
-    if (tabuleiro[linha][coluna] !== "-") {
-        console.log("Campo já preenchido. Tente novamente");
-        jogadas--
-        continue;
-    } else {
-        tabuleiro[linha][coluna] = jogada;
-        console.table(tabuleiro);
-    }
-}
+//     let coluna = lerTeclado.questionInt("Qual coluna deseja marcar? De 0 a 2\n");
+//     if (coluna > 2) {
+//         console.log("Tente novamente");
+//         jogadas--
+//         continue
+//     }
 
-for (let jogadas = 1; jogadas <= 5; jogadas++) {
-
-    let linha = lerTeclado.question(`Qual linha deseja marcar? De 0 a 2:\n`);
-    let coluna = lerTeclado.questionInt("Qual coluna deseja marcar? De 0 a 2\n");
-
-    if (tabuleiro[linha][coluna] !== "-") {
-        console.log("Campo já preenchido. Tente novamente");
-        jogadas--
-        continue;
-    } else {
-        jogada = "0"
-        tabuleiro[linha][coluna] = jogada;
-        console.table(tabuleiro);    
-    }
-}
+//     if (tabuleiro[linha][coluna] !== "-") {
+//         console.log("Campo já preenchido. Tente novamente");
+//         jogadas--
+//         console.table(tabuleiro);
+//         continue;
+//     } else {
+//         tabuleiro[linha][coluna] = jogada;
+//         console.table(tabuleiro);
+//     }
+// }
 
 console.log("_______________________________");
 
@@ -76,6 +77,52 @@ console.log("_______________________________");
 // f) Exiba o número total de tiros usados.
 
 // → Seu código aqui:
+
+let cell = {
+    temNavio: false,
+    atingida: false,
+}
+
+let mapa = [
+    [{ temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }],
+    [{ temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }],
+    [{ temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }],
+    [{ temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }],
+    [{ temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }],
+    [{ temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }, { temNavio: false, atingida: false }]
+];
+
+let qtdeNavios = 0
+
+while (qtdeNavios <= 5) {
+    let linha = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+    let coluna = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+
+    mapa[linha][coluna].temNavio = true
+    qtdeNavios++
+}
+
+let qtdeJogadas = 0;
+
+while (qtdeNavios != 0) {
+    let linha = lerTeclado.questionInt(`Qual linha deseja marcar? De 0 a 4:\n`);
+    let coluna = lerTeclado.questionInt(`Qual coluna deseja marcar? De 0 a 4:\n`);
+
+    if (mapa[linha][coluna].temNavio == true && mapa[linha][coluna].atingida == false) {
+        console.log("Acertou");
+        mapa[linha][coluna].atingida = true;
+        qtdeNavios--
+        qtdeJogadas++
+    } else if (mapa[linha][coluna].atingida == false) {
+        mapa[linha][coluna].atingida = true;
+        console.log("Agua...");
+        qtdeJogadas++
+    }
+
+    console.table(mapa)
+}
+
+console.log(`Total de jogadas: ${qtdeJogadas}`);
 
 
 console.log("_______________________________");
