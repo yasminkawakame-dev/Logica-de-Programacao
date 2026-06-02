@@ -81,32 +81,32 @@ console.log("_______________________________");
 // Após finalizar, me chame para eu verificar a lógica - questão importante
 
 // → Seu código aqui:
-let dados = {
-    nome: null,
-    idade: null,
-    cidade: null,
-}
+// let dados = {
+//     nome: null,
+//     idade: null,
+//     cidade: null,
+// }
 
-function meusDados() {
-    dados.nome = lerTeclado.question("Qual seu nome:\n");
-    dados.idade = lerTeclado.questionInt("Qual sua idade:\n");
-    dados.cidade = lerTeclado.question("Qual a cidade onde mora:\n");
-}
+// function meusDados() {
+//     dados.nome = lerTeclado.question("Qual seu nome:\n");
+//     dados.idade = lerTeclado.questionInt("Qual sua idade:\n");
+//     dados.cidade = lerTeclado.question("Qual a cidade onde mora:\n");
+// }
 
-function exibirDados() {
-    console.log("-------------------------");
-    console.log(`Nome: ${dados.nome}`);
-    console.log(`Idade: ${dados.idade}`);
-    console.log(`Cidade: ${dados.cidade}`);
-    console.log("-------------------------");
-}
+// function exibirDados() {
+//     console.log("-------------------------");
+//     console.log(`Nome: ${dados.nome}`);
+//     console.log(`Idade: ${dados.idade}`);
+//     console.log(`Cidade: ${dados.cidade}`);
+//     console.log("-------------------------");
+// }
 
-for (let i = 1; i < 3; i++) {
-    meusDados()
-    exibirDados()
-}
+// for (let i = 1; i < 3; i++) {
+//     meusDados()
+//     exibirDados()
+// }
 
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -180,10 +180,15 @@ console.log("_______________________________");
 // b) Chame a função 3 vezes.
 
 // → Seu código aqui:
-let temperatura;
 
-function converterTemperatura(){
-    temperatura = lerTeclado.questionFloat("Qual a temperatura em Celsius:\n")
+function converterTemperatura() {
+    let temperatura = lerTeclado.questionFloat("Qual a temperatura em Celsius:\n");
+    let fahrenheit = temperatura * 1.8 + 32;
+    console.log(`${temperatura} °C equivalem a ${fahrenheit.toFixed(2)} °F`);
+}
+
+for(let i = 1; i <= 3; i++){
+    converterTemperatura()
 }
 
 console.log("_______________________________");
@@ -200,8 +205,18 @@ const filmes = ["Matrix", "Interestelar", "Origem", "Senhor dos Anéis"];
 
 // → Seu código aqui:
 
+function listarFilmes(){
+    for(let i = 0; i < filmes.length; i++){
+        console.log(`${i + 1} - ${filmes[i]}`);       
+    }
+}
 
+for(let i = 1; i <= 2; i++){
+    console.log("---------------------------");
+    listarFilmes()
+}
 console.log("_______________________________");
+
 
 
 // ------------------------------------------------------------
