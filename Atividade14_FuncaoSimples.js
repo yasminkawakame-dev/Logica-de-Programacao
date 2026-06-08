@@ -81,32 +81,32 @@ console.log("_______________________________");
 // Após finalizar, me chame para eu verificar a lógica - questão importante
 
 // → Seu código aqui:
-// let dados = {
-//     nome: null,
-//     idade: null,
-//     cidade: null,
-// }
+let dados = {
+    nome: null,
+    idade: null,
+    cidade: null,
+}
 
-// function meusDados() {
-//     dados.nome = lerTeclado.question("Qual seu nome:\n");
-//     dados.idade = lerTeclado.questionInt("Qual sua idade:\n");
-//     dados.cidade = lerTeclado.question("Qual a cidade onde mora:\n");
-// }
+function meusDados() {
+    dados.nome = lerTeclado.question("Qual seu nome:\n");
+    dados.idade = lerTeclado.questionInt("Qual sua idade:\n");
+    dados.cidade = lerTeclado.question("Qual a cidade onde mora:\n");
+}
 
-// function exibirDados() {
-//     console.log("-------------------------");
-//     console.log(`Nome: ${dados.nome}`);
-//     console.log(`Idade: ${dados.idade}`);
-//     console.log(`Cidade: ${dados.cidade}`);
-//     console.log("-------------------------");
-// }
+function exibirDados() {
+    console.log("-------------------------");
+    console.log(`Nome: ${dados.nome}`);
+    console.log(`Idade: ${dados.idade}`);
+    console.log(`Cidade: ${dados.cidade}`);
+    console.log("-------------------------");
+}
 
-// for (let i = 1; i < 3; i++) {
-//     meusDados()
-//     exibirDados()
-// }
+for (let i = 1; i < 3; i++) {
+    meusDados()
+    exibirDados()
+}
 
-// console.log("_______________________________");
+console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -187,7 +187,7 @@ function converterTemperatura() {
     console.log(`${temperatura} °C equivalem a ${fahrenheit.toFixed(2)} °F`);
 }
 
-for(let i = 1; i <= 3; i++){
+for (let i = 1; i <= 3; i++) {
     converterTemperatura()
 }
 
@@ -205,19 +205,17 @@ const filmes = ["Matrix", "Interestelar", "Origem", "Senhor dos Anéis"];
 
 // → Seu código aqui:
 
-function listarFilmes(){
-    for(let i = 0; i < filmes.length; i++){
-        console.log(`${i + 1} - ${filmes[i]}`);       
+function listarFilmes() {
+    for (let i = 0; i < filmes.length; i++) {
+        console.log(`${i + 1} - ${filmes[i]}`);
     }
 }
 
-for(let i = 1; i <= 2; i++){
+for (let i = 1; i <= 2; i++) {
     console.log("---------------------------");
     listarFilmes()
 }
 console.log("_______________________________");
-
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Dividindo um programa em partes
@@ -234,10 +232,39 @@ console.log("_______________________________");
 // E chame a função principal.
 
 // → Seu código aqui:
+function limparTela() {
+    for (let i = 1; i <= 30; i++) {
+        console.log("");
+    }
+}
 
+function banner() {
+    console.log("----------------------");
+    console.log("      INFORMAÇÕES     ");
+    console.log("----------------------");
+}
+
+let nomeUsuario;
+
+function pedirNome() {
+    nomeUsuario = lerTeclado.question("Qual seu nome:\n")
+    console.log(`Olá, ${nomeUsuario}`);
+}
+
+function rodape() {
+    console.log(`Sistema desenvolvido por ${nomeUsuario}`);
+}
+
+function principal() {
+    limparTela()
+    banner()
+    pedirNome()
+    rodape()
+}
+
+principal()
 
 console.log("_______________________________");
-
 
 // ------------------------------------------------------------
 // EXERCÍCIO 9 – Menu organizado em funções
@@ -255,6 +282,73 @@ console.log("_______________________________");
 //    correspondente em cada case. Encerre quando o usuário digitar 0.
 
 // → Seu código aqui:
+function opcaoSomar() {
+    let num1 = lerTeclado.questionInt("Digite um número:\n");
+    let num2 = lerTeclado.questionInt("Digite um número:\n");
+    let soma = num1 + num2;
+    console.log(`A soma de ${num1} + ${num2} é ${soma}`);
+}
 
+function opcaoSubtrair() {
+    let num1 = lerTeclado.questionInt("Digite um número:\n");
+    let num2 = lerTeclado.questionInt("Digite um número:\n");
+    let subtracao = num1 - num2;
+    console.log(`A subtração de ${num1} - ${num2} é ${subtracao}`);
+}
+
+function opcaoMultiplicar() {
+    let num1 = lerTeclado.questionInt("Digite um número:\n");
+    let num2 = lerTeclado.questionInt("Digite um número:\n");
+    let multiplicacao = num1 * num2;
+    console.log(`A multiplicação de ${num1} x ${num2} é ${multiplicacao}`);
+}
+
+function opcaoDividir() {
+    let num1 = lerTeclado.questionInt("Digite um número:\n");
+    let num2 = lerTeclado.questionInt("Digite um número:\n");
+    if (num2 == 0) {
+        console.log("Erro: divisão por zero não é permitida.");
+    } else {
+        let divisao = num1 * num2;
+        console.log(`A divisão de ${num1} / ${num2} é ${divisao}`);
+    }
+}
+
+function exibirMenu() {
+    console.log("-----------------------");
+    console.log("   1 - Soma            ");
+    console.log("   2 - Subtração       ");
+    console.log("   3 - Multipliação    ");
+    console.log("   4 - Divisão         ");
+    console.log("   0 - Encerrar        ");
+    console.log("-----------------------");
+}
+
+let opcao;
+
+do {
+    exibirMenu()
+    opcao = lerTeclado.questionInt("Digite a opcao:\n");
+
+    switch (opcao) {
+        case 1:
+            opcaoSomar();
+            break;
+        case 2:
+            opcaoSubtrair();
+            break;
+        case 3:
+            opcaoMultiplicar();
+            break;
+        case 4:
+            opcaoDividir();
+            break;
+        case 0:
+            console.log("Encerrando...");
+            break;
+        default:
+            console.log("Opção invalida");
+    }
+} while (opcao != 0);
 
 console.log("_______________________________");
