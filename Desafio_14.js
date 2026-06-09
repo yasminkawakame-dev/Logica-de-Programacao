@@ -5,6 +5,7 @@
 // O foco é pensar em funções pequenas e bem nomeadas.
 // ============================================================
 
+let lerTeclado = require('readline-sync');
 
 // ------------------------------------------------------------
 // DESAFIO 1 – Relógio digital
@@ -20,26 +21,26 @@
 
 // → Seu código aqui:
 
-// function mostrarHora() {
-//     const agora = new Date();
-//     const horas = agora.getHours();
-//     const minutos = agora.getMinutes();
-//     const segundos = agora.getSeconds();
-//     console.log(`Horário atual: ${horas}:${minutos}:${segundos}`);
-// }
+function mostrarHora() {
+    const agora = new Date();
+    const horas = agora.getHours();
+    const minutos = agora.getMinutes();
+    const segundos = agora.getSeconds();
+    console.log(`Horário atual: ${horas}:${minutos}:${segundos}`);
+}
 
-// mostrarHora()
+mostrarHora()
 
-// function mostrarData() {
-//     const hoje = new Date();
-//     const dia = String(hoje.getDate()).padStart(2, '0');
-//     const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-//     const ano = hoje.getFullYear();
-//     console.log(`${dia}/${mes}/${ano}`);
-// }
+function mostrarData() {
+    const hoje = new Date();
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const ano = hoje.getFullYear();
+    console.log(`${dia}/${mes}/${ano}`);
+}
 
-// mostrarData()
-// console.log("_______________________________");
+mostrarData()
+console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -64,12 +65,12 @@ const cargos = ["Dev Junior", "Dev Pleno", "Tech Lead", "QA", "Designer"];
 // → Seu código aqui:
 
 
-function imprimirCartao() {
-    let numAleatorio = (Math.floor(Math.random() * 5) + 1);
-    console.log(numAleatorio);
-}
+// function imprimirCartao() {
+//     let numAleatorio = (Math.floor(Math.random() * 5) + 1);
+//     console.log(numAleatorio);
+// }
 
-imprimirCartao()
+// imprimirCartao()
 
 console.log("_______________________________");
 
@@ -126,6 +127,82 @@ console.log("_______________________________");
 // e) Ao sair, exiba "Finalizando e Saindo... Obrigado por acessar!".
 
 // → Seu código aqui:
+
+let saldo = 1000;
+
+function verSaldo() {
+    console.log(`R$ ${saldo}`);
+}
+
+function depositar() {
+    let valorDeposito = lerTeclado.questionFloat("Qual valor deseja depositar?\n");
+    saldo += valorDeposito;
+    console.log("Depósito realizado com sucesso!");
+    verSaldo();
+}
+
+function sacar() {
+    let valorSaque = lerTeclado.question("Qual o valor que deseja sacar?\n")
+    if (saldo >= valorSaque) {
+        saldo -= valorSaque;
+        console.log("Saque realizado com sucesso!");
+        verSaldo();
+    } else {
+        console.log("Saldo insuficiente");
+    }
+}
+
+function extrato() {
+    const hoje = new Date();
+    console.log("\n==============================");
+    console.log(`EXTRATO - Data: ${hoje.toLocaleDateString('pt-BR')}`);
+    console.log("==============================");
+    verSaldo();
+    console.log("==============================\n");
+}
+
+function exibirMenu() {
+    console.log(`
+    --------------------------
+      MENU CAIXA ELETRONICO
+    --------------------------
+        1 – Ver saldo
+        2 – Depositar
+        3 – Sacar
+        4 – Extrato
+        0 – Sair
+    --------------------------`);
+}
+
+let opcao;
+
+do {
+    exibirMenu();
+
+    opcao = lerTeclado.questionInt("Qual a opção desejada:\n");
+
+    switch (opcao) {
+        case 1:
+            verSaldo();
+            break;
+        case 2:
+            depositar();
+            break;
+        case 3:
+            sacar();
+            break;
+        case 4:
+            extrato();
+            break;
+        case 0:
+            console.log("Finalizando e Saindo... Obrigado por acessar!");
+            break;
+        default:
+            console.log("Opcao invalida");
+            break;
+    };
+
+} while (opcao !== 0);
 
 
 console.log("_______________________________");
