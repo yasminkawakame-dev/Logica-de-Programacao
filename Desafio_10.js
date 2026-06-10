@@ -70,7 +70,35 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
+let N = lerTeclado.questionInt("Digite um número limite N:");
+let a = 0;
+let b = 1;
 
+let contador = 0;
+let ehFibonacci = false;
+let sequencia = [];
+
+while (a <= N) {
+    sequencia.push(a); 
+    contador++;        
+   
+    if (a === N) {
+        ehFibonacci = true;
+    }
+    
+    let proximo = a + b;
+    a = b;
+    b = proximo;
+}
+
+console.log("Sequência gerada: " + sequencia.join(", "));
+console.log(`Total de números na sequência até ${N}: ${contador}`);
+
+if (ehFibonacci) {
+    console.log(`O número ${N} - FAZ PARTE da sequência de Fibonacci.`);
+} else {
+    console.log(`O número ${N} - NÃO FAZ PARTE da sequência de Fibonacci.`);
+}
 
 console.log("_______________________________");
 

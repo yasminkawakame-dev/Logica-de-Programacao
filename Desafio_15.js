@@ -22,55 +22,55 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-function temTamanhoMinimo(senha, min) {
-    if (senha.length >= min) {
-        return true
-    }
-}
+// function temTamanhoMinimo(senha, min) {
+//     if (senha.length >= min) {
+//         return true
+//     }
+// }
 
-function temNumero(senha) {
-    return /\d/.test(senha);
-}
+// function temNumero(senha) {
+//     return /\d/.test(senha);
+// }
 
-function temMaiuscula(senha) {
-    return /[A-Z]/.test(senha);
-}
+// function temMaiuscula(senha) {
+//     return /[A-Z]/.test(senha);
+// }
 
-function temEspecial(senha) {
-    return /[\W_]/.test(senha);
-}
+// function temEspecial(senha) {
+//     return /[\W_]/.test(senha);
+// }
 
-function validarSenha(senha) {
-    const motivos = [];
-    const min = 8
-    if (!temTamanhoMinimo(senha, min)) {
-        motivos.push("Tem tamanho minimo")
-    } if (!temNumero(senha)) {
-        motivos.push("Deve conter numero");
-    } if (!temMaiuscula(senha)) {
-        motivos.push("Deve conter maiuscula");
-    } if (!temEspecial(senha)) {
-        motivos.push("Deve conter caracter especial");
-    }
+// function validarSenha(senha) {
+//     const motivos = [];
+//     const min = 8
+//     if (!temTamanhoMinimo(senha, min)) {
+//         motivos.push("Tem tamanho minimo")
+//     } if (!temNumero(senha)) {
+//         motivos.push("Deve conter numero");
+//     } if (!temMaiuscula(senha)) {
+//         motivos.push("Deve conter maiuscula");
+//     } if (!temEspecial(senha)) {
+//         motivos.push("Deve conter caracter especial");
+//     }
 
-    const valida = motivos.length === 0;
+//     const valida = motivos.length === 0;
 
-    return { valida: valida, motivos: motivos };
-}
+//     return { valida: valida, motivos: motivos };
+// }
 
-let senha = lerTeclado.question("Qual a senha:\n");
+// let senha = lerTeclado.question("Qual a senha:\n");
 
-const resultado = validarSenha(senha || "");
+// const resultado = validarSenha(senha || "");
 
-if (resultado.valida) {
-    console.log("Parabéns! Sua senha é forte e válida.");
-} else {
-    console.log("Senha inválida!\n\nErros encontrados:\n- " + resultado.motivos.join("\n- "));
-}
+// if (resultado.valida) {
+//     console.log("Parabéns! Sua senha é forte e válida.");
+// } else {
+//     console.log("Senha inválida!\n\nErros encontrados:\n- " + resultado.motivos.join("\n- "));
+// }
 
-console.log(resultado);
+// console.log(resultado);
 
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -93,6 +93,79 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+function celsiusParaFahrenheit(c) {
+    return c * 1.8 + 32;
+}
+
+function fahrenheitParaCelsius(f) {
+    return (f - 32) / 1.8;
+}
+
+function kmParaMilhas(km) {
+    return km * 0.621371;
+}
+
+function milhasParaKm(mi) {
+    return mi / 0.621371;
+}
+
+function kgParaLibras(kg) {
+    return kg * 2.20462;
+}
+
+function librasParaKg(lb) {
+    return lb / 2.20462;
+}
+
+function converter(valor, dePara) {
+    switch (dePara) {
+        case 1:
+            return celsiusParaFahrenheit(valor);
+        case 2:
+            return fahrenheitParaCelsius(valor);
+        case 3:
+            return kmParaMilhas(valor);
+        case 4:
+            return milhasParaKm(valor);
+        case 5:
+            return kgParaLibras(valor);
+        case 6:
+            return librasParaKg(valor);
+        default:
+            return null;
+    }
+}
+let opcao;
+
+do {
+    console.log(
+        "--- CONVERSOR DE UNIDADES ---\n" +
+        "1 - Celsius para Fahrenheit\n" +
+        "2 - Fahrenheit para Celsius\n" +
+        "3 - Quilômetros para Milhas\n" +
+        "4 - Milhas para Quilômetros\n" +
+        "5 - Quilos para Libras\n" +
+        "6 - Libras para Quilos\n" +
+        "0 - Sair\n\n"
+    )
+
+    opcao = lerTeclado.questionInt("Escolha uma opção:");
+
+    if (opcao >= 1 && opcao <= 6) {
+        let valor = lerTeclado.questionFloat("Qual o valor para converter:\n");
+        if (!isNaN(valor)) {
+            let resultado = converter(valor, opcao);
+            console.log(`Resultado da conversão: ${resultado.toFixed(2)}`);
+        } else {
+            console.log("Por favor, insira um número válido.");
+        }
+    }
+    else if (opcao !== 0) {
+        console.log("Opção inválida! Escolha um número de 0 a 6.");
+    }
+} while (opcao !== 0);
+
+console.log("Programa encerrado.");
 
 console.log("_______________________________");
 
@@ -136,7 +209,6 @@ console.log("_______________________________");
 // d) Após cada operação, exiba a lista atualizada com console.table().
 
 // → Seu código aqui:
-
 
 console.log("_______________________________");
 
