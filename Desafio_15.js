@@ -93,100 +93,178 @@ let lerTeclado = require('readline-sync');
 
 // → Seu código aqui:
 
-function celsiusParaFahrenheit(c) {
-    return c * 1.8 + 32;
-}
+// function celsiusParaFahrenheit(c) {
+//     return c * 1.8 + 32;
+// }
 
-function fahrenheitParaCelsius(f) {
-    return (f - 32) / 1.8;
-}
+// function fahrenheitParaCelsius(f) {
+//     return (f - 32) / 1.8;
+// }
 
-function kmParaMilhas(km) {
-    return km * 0.621371;
-}
+// function kmParaMilhas(km) {
+//     return km * 0.621371;
+// }
 
-function milhasParaKm(mi) {
-    return mi / 0.621371;
-}
+// function milhasParaKm(mi) {
+//     return mi / 0.621371;
+// }
 
-function kgParaLibras(kg) {
-    return kg * 2.20462;
-}
+// function kgParaLibras(kg) {
+//     return kg * 2.20462;
+// }
 
-function librasParaKg(lb) {
-    return lb / 2.20462;
-}
+// function librasParaKg(lb) {
+//     return lb / 2.20462;
+// }
 
-function converter(valor, dePara) {
-    switch (dePara) {
-        case 1:
-            return celsiusParaFahrenheit(valor);
-        case 2:
-            return fahrenheitParaCelsius(valor);
-        case 3:
-            return kmParaMilhas(valor);
-        case 4:
-            return milhasParaKm(valor);
-        case 5:
-            return kgParaLibras(valor);
-        case 6:
-            return librasParaKg(valor);
-        default:
-            return null;
-    }
-}
-let opcao;
+// function converter(valor, dePara) {
+//     switch (dePara) {
+//         case 1:
+//             return celsiusParaFahrenheit(valor);
+//         case 2:
+//             return fahrenheitParaCelsius(valor);
+//         case 3:
+//             return kmParaMilhas(valor);
+//         case 4:
+//             return milhasParaKm(valor);
+//         case 5:
+//             return kgParaLibras(valor);
+//         case 6:
+//             return librasParaKg(valor);
+//         default:
+//             return null;
+//     }
+// }
+// let opcao;
 
-do {
-    console.log(
-        "--- CONVERSOR DE UNIDADES ---\n" +
-        "1 - Celsius para Fahrenheit\n" +
-        "2 - Fahrenheit para Celsius\n" +
-        "3 - Quilômetros para Milhas\n" +
-        "4 - Milhas para Quilômetros\n" +
-        "5 - Quilos para Libras\n" +
-        "6 - Libras para Quilos\n" +
-        "0 - Sair\n\n"
-    )
+// do {
+//     console.log(
+//         "--- CONVERSOR DE UNIDADES ---\n" +
+//         "1 - Celsius para Fahrenheit\n" +
+//         "2 - Fahrenheit para Celsius\n" +
+//         "3 - Quilômetros para Milhas\n" +
+//         "4 - Milhas para Quilômetros\n" +
+//         "5 - Quilos para Libras\n" +
+//         "6 - Libras para Quilos\n" +
+//         "0 - Sair\n\n"
+//     )
 
-    opcao = lerTeclado.questionInt("Escolha uma opção:");
+//     opcao = lerTeclado.questionInt("Escolha uma opção:");
 
-    if (opcao >= 1 && opcao <= 6) {
-        let valor = lerTeclado.questionFloat("Qual o valor para converter:\n");
-        if (!isNaN(valor)) {
-            let resultado = converter(valor, opcao);
-            console.log(`Resultado da conversão: ${resultado.toFixed(2)}`);
-        } else {
-            console.log("Por favor, insira um número válido.");
-        }
-    }
-    else if (opcao !== 0) {
-        console.log("Opção inválida! Escolha um número de 0 a 6.");
-    }
-} while (opcao !== 0);
+//     if (opcao >= 1 && opcao <= 6) {
+//         let valor = lerTeclado.questionFloat("Qual o valor para converter:\n");
+//         if (!isNaN(valor)) {
+//             let resultado = converter(valor, opcao);
+//             console.log(`Resultado da conversão: ${resultado.toFixed(2)}`);
+//         } else {
+//             console.log("Por favor, insira um número válido.");
+//         }
+//     }
+//     else if (opcao !== 0) {
+//         console.log("Opção inválida! Escolha um número de 0 a 6.");
+//     }
+// } while (opcao !== 0);
 
-console.log("Programa encerrado.");
+// console.log("Programa encerrado.");
 
-console.log("_______________________________");
-
-
-// ------------------------------------------------------------
-// DESAFIO 3 – Quizz
-// ------------------------------------------------------------
-// a) Declare uma lista com 5 objetos, contendo cada objeto:
-//    pergunta: "..."
-//    jaRespondida: false
-//    acertou: false
-// b) Crie a função 'exibirPergunta' que exibe a pergunta de forma estilizada.
-// c) Crie a função 'verificarResposta' que verifica se a resposta está correta.
-// d) Crie a função 'iniciarQuiz' que chama as perguntas em sequência.
-// e) Crie a função 'mostrarResultado' que exibe o resultado atual.
-// f) Crie a função 'iniciarQuiz' para iniciar o quiz.
-
-// → Seu código aqui:
+// console.log("_______________________________");
 
 
-console.log("_______________________________");
+// // ------------------------------------------------------------
+// // DESAFIO 3 – Quizz
+// // ------------------------------------------------------------
+// // a) Declare uma lista com 5 objetos, contendo cada objeto:
+// //    pergunta: "..."
+// //    jaRespondida: false
+// //    acertou: false
+// // b) Crie a função 'exibirPergunta' que exibe a pergunta de forma estilizada.
+// // c) Crie a função 'verificarResposta' que verifica se a resposta está correta.
+// // d) Crie a função 'iniciarQuiz' que chama as perguntas em sequência.
+// // e) Crie a função 'mostrarResultado' que exibe o resultado atual.
+// // f) Crie a função 'iniciarQuiz' para iniciar o quiz.
+
+// // → Seu código aqui:
+
+// let perguntas = [
+//     {
+//         pergunta: "Qual é a capital do Brasil?",
+//         respostaCorreta: "Brasilia",
+//         jaRespondida: false,
+//         acertou: false
+//     },
+//     {
+//         pergunta: "Quanto é 2 + 2?",
+//         respostaCorreta: "4",
+//         jaRespondida: false,
+//         acertou: false
+//     },
+//     {
+//         pergunta: "Qual linguagem executa no navegador?",
+//         respostaCorreta: "JavaScript",
+//         jaRespondida: false,
+//         acertou: false
+//     },
+//     {
+//         pergunta: "Qual planeta é conhecido como planeta vermelho?",
+//         respostaCorreta: "Marte",
+//         jaRespondida: false,
+//         acertou: false
+//     },
+//     {
+//         pergunta: "Quantos dias tem uma semana?",
+//         respostaCorreta: "7",
+//         jaRespondida: false,
+//         acertou: false
+//     }
+// ];
+
+// function exibirPergunta(perguntaObj) {
+//     console.log("-------------------------");
+//     console.log("PERGUNTA:");
+//     console.log(perguntaObj.pergunta);
+//     console.log("-------------------------");
+// }
+
+// function verificarResposta(perguntaObj, respostaUsuario) {
+//     perguntaObj.jaRespondida = true;
+//     if (respostaUsuario.toLowerCase() === perguntaObj.respostaCorreta.toLowerCase()) {
+//         perguntaObj.acertou = true;
+//         return true;
+//     }
+//     return false;
+// }
+
+// function mostrarResultado() {
+//     let acertos = 0;
+//     for (let pergunta of perguntas) {
+//         if (pergunta.acertou) {
+//             acertos++;
+//         }
+//     }
+
+//     console.log(`Você acertou ${acertos} de ${perguntas.length} perguntas.`);
+// }
+
+// function iniciarQuiz() {
+//     for (let pergunta of perguntas) {
+//         exibirPergunta(pergunta);
+
+//         let resposta = lerTeclado.question("Sua resposta:");
+//         let acertou = verificarResposta(pergunta, resposta);
+
+//         if (acertou) {
+//             console.log("Resposta correta!");
+//         } else {
+//             console.log("Resposta incorreta!");
+//         }
+//     }
+
+//     mostrarResultado();
+// }
+
+// iniciarQuiz();
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -209,6 +287,48 @@ console.log("_______________________________");
 // d) Após cada operação, exiba a lista atualizada com console.table().
 
 // → Seu código aqui:
+
+let listaFuncionario = []
+
+function criarFuncionario(lista, nome, cargo, salario) {
+    let funcionario = {
+        id: lista.length + 1,
+        nome: nome,
+        cargo: cargo,
+        salario: salario,
+        ativo: true
+    };
+
+    lista.push(funcionario)
+}
+
+function buscarPorId(lista, id) {
+    for (let i = 0; i < lista.length; i++) {
+        if (id == lista[i].id)
+            return lista[i]
+    }
+    return null
+}
+
+function atualizarSalario(lista, id, novoSalario) {
+    let funcionario = buscarPorId(lista, id)
+    if (funcionario != null) {
+        funcionario.salario = novoSalario
+        return true
+    } 
+    return false
+}
+
+function desligar(lista, id){
+    let funcionario = buscarPorId(lista, id)
+    if (funcionario == null) {
+        return false
+    } 
+    funcionario.ativo = false
+    return true
+}
+
+
 
 console.log("_______________________________");
 
