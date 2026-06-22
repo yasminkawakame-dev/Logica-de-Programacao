@@ -43,10 +43,10 @@ function exibirMenu() {
 }
 
 let contasSalvas = [{
-        usuario: "Yas",
+        usuario: "joana",
         cpf: "999.999.999-99",
-        email: "yas@gmail.com",
-        dataNascimento: "01/08/2001",
+        email: "jo@gmail.com",
+        dataNascimento: "27/09/2004",
         senha: 123456,
         numConta: 876543,
         saldo: 0,
@@ -178,11 +178,14 @@ function acessarConta() {
     let numeroConta = lerTeclado.questionInt("Digite o número da sua conta:\n");
     let senha = lerTeclado.questionInt("Digite sua senha: \n")
 
-    if (!contasSalvas.includes({numConta}, numeroConta) && ) {
-        console.log("Conta ou senha invalido");
-    }
-        
-
+    for(let i = 0; i <= contasSalvas.length; i++) {
+        if(contasSalvas[i].numConta == numeroConta && contasSalvas[i].senha == senha) {
+            menuConta(contasSalvas[i])
+            return
+        }
+    }   
+    console.log("Numero conta ou senha invalidos!");
+    acessarConta()    
 }
 
 // function verSaldo() {
